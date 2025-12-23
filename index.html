@@ -6,6 +6,28 @@
     <title>ProXTrades - Professional Trade Management Solutions</title>
     <meta name="description" content="Complete business management solutions for electricians, HVAC technicians, and plumbers. Professional tools for estimates, invoicing, and job management.">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for app store badges and available status */
+        .app-status.available {
+            background-color: #22c55e;
+            color: white;
+        }
+        .app-card.featured {
+            border: 2px solid #22c55e;
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.2);
+        }
+        .app-download {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .store-badge img {
+            height: 50px;
+            transition: transform 0.2s ease;
+        }
+        .store-badge:hover img {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -29,8 +51,8 @@
                 <h2>Professional Business Management for Trade Professionals</h2>
                 <p class="hero-subtitle">Comprehensive tools designed specifically for electricians, HVAC technicians, and plumbers. Manage jobs, create estimates, send invoices, and grow your business.</p>
                 <div class="hero-cta">
-                    <a href="#apps" class="btn btn-primary">Explore Our Apps</a>
-                    <a href="#contact" class="btn btn-secondary">Get Notified at Launch</a>
+                    <a href="https://apps.apple.com/app/id6755925920" class="btn btn-primary" target="_blank" rel="noopener">Download for iOS</a>
+                    <a href="#apps" class="btn btn-secondary">Explore Our Apps</a>
                 </div>
             </div>
         </div>
@@ -83,19 +105,23 @@
             
             <div class="apps-grid">
                 <!-- Electrician Pro X -->
-                <div class="app-card">
+                <div class="app-card featured">
                     <div class="app-icon">⚡</div>
                     <h3>Electrician Pro X</h3>
-                    <div class="app-status launching">Launching Soon</div>
+                    <div class="app-status available">Available Now</div>
                     <p>Complete business management for electrical contractors. Create detailed estimates with electrical-specific materials, manage service calls, and invoice professionally.</p>
                     <ul class="app-features">
-                        <li>Comprehensive electrical materials database</li>
-                        <li>Service call tracking and scheduling</li>
-                        <li>Circuit and panel documentation</li>
-                        <li>Code compliance notes</li>
-                        <li>Professional estimate and invoice templates</li>
+                        <li>NEC code calculators & ampacity tables</li>
+                        <li>Job management with photo documentation</li>
+                        <li>Professional estimates & invoices with PDF export</li>
+                        <li>Team collaboration & job assignments</li>
+                        <li>Time tracking & business analytics</li>
                     </ul>
-                    <a href="https://app.proxtrades.com" class="btn btn-outline">Learn More</a>
+                    <div class="app-download">
+                        <a href="https://apps.apple.com/app/id6755925920" class="store-badge" target="_blank" rel="noopener">
+                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="50">
+                        </a>
+                    </div>
                 </div>
 
                 <!-- HVAC Pro X -->
@@ -166,7 +192,7 @@
             <div class="contact-content">
                 <p>Interested in trying ProXTrades for your business? Contact us to get notified when we launch.</p>
                 <div class="contact-info">
-                    <p><strong>Email:</strong> <a href="mailto:support@proxtrades.com">support@proxtrades.com</a></p>
+                    <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#2b585e5b5b44595f6b5b5944535f594a4f4e5805484446"><span class="__cf_email__" data-cfemail="7a090f0a0a15080e3a0a0815020e081b1e1f0954191517">[email&#160;protected]</span></a></p>
                 </div>
             </div>
         </div>
@@ -197,15 +223,4 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contact</h4>
-                    <p><a href="mailto:support@proxtrades.com">support@proxtrades.com</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 ProXTrades. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                    <p><a href="/cdn-cgi/l/email-protection#24575154544b56506454564b5c5056454041570a474b49"><span class="__cf_email__" data-cfemail="5b282e2b2b34292f1b2b2934232f293a3f3e2875383436">[email&#1
