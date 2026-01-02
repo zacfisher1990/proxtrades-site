@@ -27,6 +27,30 @@
         .store-badge:hover img {
             transform: scale(1.05);
         }
+        /* Screenshot gallery styles */
+        .screenshot-gallery {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .app-screenshot {
+            width: 140px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .app-screenshot:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 480px) {
+            .app-screenshot {
+                width: 120px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -110,6 +134,13 @@
                     <h3>Electrician Pro X</h3>
                     <div class="app-status available">Available Now</div>
                     <p>Complete business management for electrical contractors. Create detailed estimates with electrical-specific materials, manage service calls, and invoice professionally.</p>
+                    
+                    <!-- Screenshot Gallery -->
+                    <div class="screenshot-gallery">
+                        <img src="https://proxtrades.com/images/email/jobs-screenshot.png" alt="Job Management Screenshot" class="app-screenshot">
+                        <img src="https://proxtrades.com/images/email/estimates-invoices-screenshot.png" alt="Estimates & Invoices Screenshot" class="app-screenshot">
+                    </div>
+                    
                     <ul class="app-features">
                         <li>NEC code calculators & ampacity tables</li>
                         <li>Job management with photo documentation</li>
