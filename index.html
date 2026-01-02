@@ -51,6 +51,80 @@
                 width: 120px;
             }
         }
+        
+        /* Hero section with phone mockups */
+        .hero .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+        .hero-phones {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 1rem;
+            position: relative;
+        }
+        .phone-mockup {
+            width: 220px;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+            transition: transform 0.3s ease;
+        }
+        .phone-mockup:hover {
+            transform: translateY(-10px);
+        }
+        .phone-1 {
+            transform: rotate(-5deg);
+            z-index: 2;
+        }
+        .phone-1:hover {
+            transform: rotate(-5deg) translateY(-10px);
+        }
+        .phone-2 {
+            transform: rotate(5deg);
+            z-index: 1;
+        }
+        .phone-2:hover {
+            transform: rotate(5deg) translateY(-10px);
+        }
+        
+        /* Responsive hero */
+        @media (max-width: 900px) {
+            .hero .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text {
+                max-width: 100%;
+            }
+            .hero-cta {
+                justify-content: center;
+            }
+            .hero-phones {
+                margin-top: 2rem;
+            }
+            .phone-mockup {
+                width: 160px;
+            }
+        }
+        @media (max-width: 480px) {
+            .phone-mockup {
+                width: 130px;
+            }
+            .phone-1 {
+                transform: rotate(-3deg);
+            }
+            .phone-2 {
+                transform: rotate(3deg);
+            }
+        }
     </style>
 </head>
 <body>
@@ -72,11 +146,17 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Professional Business Management for Trade Professionals</h2>
-                <p class="hero-subtitle">Comprehensive tools designed specifically for electricians, HVAC technicians, and plumbers. Manage jobs, create estimates, send invoices, and grow your business.</p>
-                <div class="hero-cta">
-                    <a href="https://apps.apple.com/app/id6755925920" class="btn btn-primary" target="_blank" rel="noopener">Download for iOS</a>
-                    <a href="#apps" class="btn btn-secondary">Explore Our Apps</a>
+                <div class="hero-text">
+                    <h2>Professional Business Management for Trade Professionals</h2>
+                    <p class="hero-subtitle">Comprehensive tools designed specifically for electricians, HVAC technicians, and plumbers. Manage jobs, create estimates, send invoices, and grow your business.</p>
+                    <div class="hero-cta">
+                        <a href="https://apps.apple.com/app/id6755925920" class="btn btn-primary" target="_blank" rel="noopener">Download for iOS</a>
+                        <a href="#apps" class="btn btn-secondary">Explore Our Apps</a>
+                    </div>
+                </div>
+                <div class="hero-phones">
+                    <img src="https://proxtrades.com/images/jobs.png" alt="Jobs Management Screen" class="phone-mockup phone-1">
+                    <img src="https://proxtrades.com/images/estimatesinvoices.png" alt="Estimates & Invoices Screen" class="phone-mockup phone-2">
                 </div>
             </div>
         </div>
