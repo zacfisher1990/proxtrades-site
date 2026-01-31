@@ -426,6 +426,43 @@
             transform: scale(1.05);
         }
 
+        .web-app-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-card);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .web-app-btn:hover {
+            background: var(--primary);
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        .web-app-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .download-options {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .download-divider {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
         /* Why Choose Section */
         .why-choose {
             padding: 100px 0;
@@ -655,7 +692,7 @@
                 <p class="hero-subtitle">Complete business management built for electricians, HVAC technicians, and plumbers. Jobs, estimates, invoices, time tracking—everything in one app.</p>
                 <div class="hero-cta">
                     <a href="https://apps.apple.com/app/id6755925920" class="btn btn-primary" target="_blank" rel="noopener">Download for iOS</a>
-                    <a href="#apps" class="btn btn-secondary">Explore Our Apps</a>
+                    <a href="https://electrician.proxtrades.com" class="btn btn-secondary" target="_blank" rel="noopener">Launch Web App</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -730,14 +767,19 @@
                         <li>Electrical materials database</li>
                     </ul>
                     <div class="app-download">
-                        <div class="store-badges">
+                        <div class="download-options">
                             <a href="https://apps.apple.com/app/id6755925920" class="store-badge" target="_blank" rel="noopener">
                                 <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
                             </a>
-                            <!-- Uncomment when Android is live -->
-                            <!-- <a href="https://play.google.com/store/apps/details?id=com.proxtrades.electrician" class="store-badge" target="_blank" rel="noopener">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
-                            </a> -->
+                            <span class="download-divider">or</span>
+                            <a href="https://electrician.proxtrades.com" class="web-app-btn" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                                Launch Web App
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -831,9 +873,15 @@
                     <p>Professional business management solutions for trade professionals. Built to help you work smarter and grow your business.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Our Apps</h4>
+                    <h4>Electrician Pro X</h4>
                     <ul>
-                        <li><a href="https://apps.apple.com/app/id6755925920">Electrician Pro X</a></li>
+                        <li><a href="https://apps.apple.com/app/id6755925920">Download iOS App</a></li>
+                        <li><a href="https://electrician.proxtrades.com">Launch Web App</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Coming Soon</h4>
+                    <ul>
                         <li><a href="#apps">HVAC Pro X</a></li>
                         <li><a href="#apps">Plumber Pro X</a></li>
                     </ul>
@@ -852,7 +900,6 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Pro X Trades LLC. All rights reserved.</p>
-                <p>Portland, Oregon</p>
             </div>
         </div>
     </footer>
