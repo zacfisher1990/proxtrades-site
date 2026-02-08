@@ -4,123 +4,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - Electrician Pro X</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9fafb;
+
+        :root {
+            --primary: #F7C600;
+            --primary-dark: #D4AA00;
+            --bg-dark: #292929;
+            --bg-card: #333333;
+            --text-primary: #f0f0f0;
+            --text-secondary: #999999;
+            --border: #444444;
+            --amber: #F59E0B;
+            --amber-soft: rgba(245, 158, 11, 0.12);
         }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-dark);
+        }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
         }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
         .header {
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 2px solid #e5e7eb;
+            border-bottom: 2px solid var(--border);
         }
+
         .header h1 {
             font-size: 2rem;
-            color: #111827;
+            color: var(--text-primary);
             margin-bottom: 8px;
+            font-weight: 700;
         }
+
         .header .app-name {
-            color: #2563eb;
+            color: var(--primary);
             font-weight: 600;
         }
+
         .header .updated {
-            color: #6b7280;
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
+
         .content {
-            background: #ffffff;
+            background: var(--bg-card);
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
         }
+
         h2 {
             font-size: 1.4rem;
-            color: #111827;
+            color: var(--text-primary);
             margin-top: 32px;
             margin-bottom: 16px;
             padding-bottom: 8px;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid var(--border);
         }
+
         h2:first-child {
             margin-top: 0;
         }
+
         h3 {
             font-size: 1.1rem;
-            color: #374151;
+            color: var(--text-primary);
             margin-top: 24px;
             margin-bottom: 12px;
         }
+
         p {
             margin-bottom: 16px;
-            color: #4b5563;
+            color: var(--text-secondary);
         }
+
         ul {
             margin-bottom: 16px;
             padding-left: 24px;
         }
+
         li {
             margin-bottom: 8px;
-            color: #4b5563;
+            color: var(--text-secondary);
         }
+
         strong {
-            color: #111827;
+            color: var(--text-primary);
         }
-        .contact {
-            background: #f3f4f6;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 24px;
-        }
-        .contact a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-        .contact a:hover {
-            text-decoration: underline;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #e5e7eb;
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
+
         .warning {
-            background: #fef3c7;
-            border-left: 4px solid #f59e0b;
+            background: var(--amber-soft);
+            border-left: 4px solid var(--amber);
             padding: 16px;
             margin: 16px 0;
             border-radius: 0 8px 8px 0;
         }
+
         .warning p {
             margin: 0;
-            color: #92400e;
+            color: var(--text-secondary);
         }
-        .caps {
-            text-transform: uppercase;
+
+        .contact {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 24px;
         }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #2563eb;
+
+        .contact a {
+            color: var(--primary);
             text-decoration: none;
         }
-        .back-link:hover {
+
+        .contact a:hover {
             text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 640px) {
+            .content {
+                padding: 24px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
@@ -145,6 +192,7 @@
                 <li>Job management and tracking</li>
                 <li>Creating and sending estimates</li>
                 <li>Creating and sending invoices</li>
+                <li>Online invoice payments via Stripe</li>
                 <li>Time tracking</li>
                 <li>Business analytics</li>
             </ul>
@@ -167,7 +215,7 @@
 
             <h3>Subscription Terms</h3>
             <ul>
-                <li>Subscriptions are billed monthly at $12.99 USD (or current pricing as displayed in the App)</li>
+                <li>Subscriptions are billed monthly at $12.99 USD or annually at $99.99 USD (or current pricing as displayed in the App)</li>
                 <li>Payment is charged to your Apple ID or Google Play account at confirmation of purchase</li>
                 <li>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period</li>
                 <li>Your account will be charged for renewal within 24 hours prior to the end of the current period</li>
@@ -183,6 +231,16 @@
 
             <h3>Refunds</h3>
             <p>Refund requests are handled by Apple (for iOS) or Google (for Android) according to their respective refund policies. We do not process refunds directly.</p>
+
+            <h2>Invoice Payments and Stripe</h2>
+            <p>The App enables contractors to accept payments from their clients through Stripe. By using this feature:</p>
+            <ul>
+                <li>Contractors must set up and maintain their own Stripe Connected Account</li>
+                <li>All payment processing is handled directly by Stripe and subject to <a href="https://stripe.com/legal" target="_blank" rel="noopener" style="color: var(--primary);">Stripe's Terms of Service</a></li>
+                <li>We do not store credit card numbers or sensitive payment information</li>
+                <li>Payment disputes and chargebacks are handled between the contractor, their client, and Stripe</li>
+                <li>We are not responsible for any payment processing errors, delays, or failures</li>
+            </ul>
 
             <h2>Acceptable Use</h2>
             <p>You agree not to:</p>
@@ -236,7 +294,7 @@
             <p>The App and its original content, features, and functionality are protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, sell, or lease any part of the App without prior written consent.</p>
 
             <h2>Third-Party Services</h2>
-            <p>The App uses third-party services including Firebase, Resend, RevenueCat, and Apple/Google payment services. Your use of these services is subject to their respective terms and privacy policies.</p>
+            <p>The App uses third-party services including Firebase, Resend, RevenueCat, Stripe, and Apple/Google payment services. Your use of these services is subject to their respective terms and privacy policies.</p>
 
             <h2>Termination</h2>
             <p>We may terminate or suspend your account and access to the App immediately, without prior notice or liability, for any reason, including if you breach these Terms.</p>
@@ -267,7 +325,7 @@
         </div>
         
         <div class="footer">
-            <p>© 2025 Electrician Pro X. All rights reserved.</p>
+            <p>&copy; 2026 Pro X Trades LLC. All rights reserved.</p>
         </div>
     </div>
 </body>
