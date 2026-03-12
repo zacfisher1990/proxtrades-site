@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40">
+  <defs>
+    <style>
+      .letter { font-family: 'Inter', 'Arial Black', sans-serif; font-weight: 800; font-size: 32px; }
+    </style>
+  </defs>
+
+  <!-- P -->
+  <text x="0" y="32" class="letter" fill="#f0f0f0">P</text>
+
+  <!-- X in yellow -->
+  <text x="38" y="32" class="letter" fill="#F7C600">X</text>
+
+  <!-- T -->
+  <text x="78" y="32" class="letter" fill="#f0f0f0">T</text>
+
+  <!-- Yellow underline accent under X only -->
+  <rect x="38" y="36" width="26" height="3" rx="1.5" fill="#F7C600"/>
+</svg>
