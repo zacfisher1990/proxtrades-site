@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="20" fill="#292929"/>
+  <defs>
+    <linearGradient id="xGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#F7C600"/>
+    </linearGradient>
+    <clipPath id="xClip">
+      <polygon points="
+        10,10 35,10 50,35 65,10 90,10
+        90,35 65,50 90,65 90,90
+        65,90 50,65 35,90 10,90
+        10,65 35,50 10,35
+      "/>
+    </clipPath>
+  </defs>
+  <rect x="0" y="0" width="100" height="100" fill="url(#xGrad)" clip-path="url(#xClip)"/>
+</svg>
