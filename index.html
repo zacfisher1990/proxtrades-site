@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProXTrades - Professional Trade Management Solutions</title>
-    <meta name="description" content="Complete business management solutions for electricians, HVAC technicians, and plumbers. Professional tools for estimates, invoicing, and job management.">
+    <title>Electrician Pro X — Run Your Electrical Business Like a Pro</title>
+    <meta name="description" content="The complete business management app for electrical contractors. Jobs, estimates, invoices, time tracking, and 30+ NEC calculators — all in one app.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -296,180 +296,10 @@
             line-height: 1.6;
         }
 
-        /* Apps Section */
-        .apps {
-            padding: 100px 0;
-            background: linear-gradient(180deg, #303030 0%, var(--bg-dark) 100%);
-        }
-
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .app-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 32px;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s;
-        }
-
-        .app-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .app-card.featured {
-            border: 2px solid var(--primary);
-            box-shadow: 0 8px 32px rgba(247, 198, 0, 0.15);
-            position: relative;
-        }
-
-        .app-card.featured::before {
-            content: 'FLAGSHIP APP';
-            position: absolute;
-            top: -12px;
-            left: 24px;
-            background: var(--primary);
-            color: #000;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 4px;
-            letter-spacing: 0.5px;
-        }
-
-        .app-icon {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .app-card h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .app-status {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-            width: fit-content;
-        }
-
-        .app-status.available {
-            background: rgba(34, 197, 94, 0.15);
-            color: var(--success);
-        }
-
-        .app-status.coming-soon {
-            background: rgba(247, 198, 0, 0.15);
-            color: var(--primary);
-        }
-
-        .app-card > p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .app-features {
-            list-style: none;
-            margin-bottom: 24px;
-            flex-grow: 1;
-        }
-
-        .app-features li {
-            padding: 8px 0;
-            padding-left: 28px;
-            position: relative;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .app-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .app-download {
-            margin-top: auto;
-            padding-top: 16px;
-        }
-
-        .store-badges {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .store-badge img {
-            height: 44px;
-            transition: transform 0.2s;
-        }
-
-        .store-badge:hover img {
-            transform: scale(1.05);
-        }
-
-        .web-app-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--bg-card);
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.2s;
-        }
-
-        .web-app-btn:hover {
-            background: var(--primary);
-            color: #000;
-            transform: scale(1.05);
-        }
-
-        .web-app-btn svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        .download-options {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .download-divider {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
         /* Why Choose Section */
         .why-choose {
             padding: 100px 0;
-            background: var(--bg-dark);
+            background: #303030;
         }
 
         .why-grid {
@@ -493,6 +323,236 @@
         .why-item p {
             color: var(--text-secondary);
             font-size: 0.95rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: var(--bg-dark);
+        }
+
+        .pricing-toggle-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-toggle-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s;
+            user-select: none;
+        }
+
+        .pricing-toggle-label.active {
+            color: var(--text-primary);
+        }
+
+        .pricing-toggle-track {
+            width: 52px;
+            height: 28px;
+            background: var(--primary);
+            border-radius: 14px;
+            position: relative;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .pricing-toggle-thumb {
+            width: 22px;
+            height: 22px;
+            background: var(--bg-dark);
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            transition: transform 0.2s;
+        }
+
+        .pricing-toggle-track.annual .pricing-toggle-thumb {
+            transform: translateX(24px);
+        }
+
+        .pricing-save-badge {
+            background: var(--primary);
+            color: #000;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 760px;
+            margin: 0 auto 40px;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px 32px;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary);
+        }
+
+        .pricing-featured-badge {
+            position: absolute;
+            top: -13px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: #000;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .pricing-plan-name {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .pricing-card.featured .pricing-plan-name {
+            color: var(--primary);
+        }
+
+        .pricing-price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            margin-bottom: 6px;
+        }
+
+        .pricing-dollar {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .pricing-amount {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .pricing-period {
+            font-size: 14px;
+            color: var(--text-muted);
+            align-self: flex-end;
+            margin-bottom: 8px;
+        }
+
+        .pricing-annual-note {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            min-height: 20px;
+        }
+
+        .pricing-annual-note span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .pricing-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 0 0 20px;
+        }
+
+        .pricing-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .pricing-features li.unavailable {
+            color: var(--text-muted);
+        }
+
+        .pricing-features li svg {
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: opacity 0.15s, transform 0.1s;
+            box-sizing: border-box;
+        }
+
+        .pricing-cta:hover {
+            opacity: 0.88;
+            transform: translateY(-1px);
+        }
+
+        .pricing-cta.free {
+            background: transparent;
+            border: 1.5px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .pricing-cta.pro {
+            background: var(--primary);
+            color: #000;
+            border: none;
+        }
+
+        .pricing-guarantee {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+            max-width: 420px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
 
         /* Contact Section */
@@ -607,6 +667,40 @@
             font-size: 0.85rem;
         }
 
+        /* Download options (used in hero area) */
+        .store-badge img {
+            height: 44px;
+            transition: transform 0.2s;
+        }
+
+        .store-badge:hover img {
+            transform: scale(1.05);
+        }
+
+        .web-app-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-card);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .web-app-btn:hover {
+            background: var(--primary);
+            color: #000;
+        }
+
+        .web-app-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .hero .container {
@@ -626,8 +720,7 @@
                 display: none;
             }
 
-            .features-grid,
-            .apps-grid {
+            .features-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -654,7 +747,6 @@
             }
 
             .features-grid,
-            .apps-grid,
             .why-grid {
                 grid-template-columns: 1fr;
             }
@@ -673,6 +765,7 @@
     </style>
 </head>
 <body>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -681,7 +774,7 @@
             </div>
             <nav class="nav">
                 <a href="#features">Features</a>
-                <a href="#apps">Our Apps</a>
+                <a href="#pricing">Pricing</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -691,8 +784,8 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Run Your Trade Business <span>Like a Pro</span></h2>
-                <p class="hero-subtitle">Complete business management built for electricians, HVAC technicians, and plumbers. Jobs, estimates, invoices, time tracking—everything in one app.</p>
+                <h2>Run Your Electrical Business <span>Like a Pro</span></h2>
+                <p class="hero-subtitle">The complete business management app built for electrical contractors. Jobs, estimates, invoices, time tracking, and 30+ NEC calculators — everything in one app.</p>
                 <div class="hero-cta">
                     <a href="https://apps.apple.com/app/id6755925920" class="btn btn-primary" target="_blank" rel="noopener">Download for iOS</a>
                     <a href="https://play.google.com/store/apps/details?id=com.electricianprox.app" class="btn btn-primary" target="_blank" rel="noopener">Download for Android</a>
@@ -700,7 +793,6 @@
                 </div>
             </div>
             <div class="hero-image">
-                <!-- Replace these with your actual app screenshots -->
                 <div class="hero-phones">
                     <img src="images/IMG_9864.png" alt="Electrician Pro X Jobs Screen" class="phone-mockup phone-1">
                     <img src="images/IMG_9865.png" alt="Electrician Pro X Estimates Screen" class="phone-mockup phone-2">
@@ -722,7 +814,7 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
-                    <h3>Estimates & Invoices</h3>
+                    <h3>Estimates &amp; Invoices</h3>
                     <p>Create professional estimates in minutes. Convert to invoices with one tap. Send PDFs directly to clients.</p>
                 </div>
                 <div class="feature-card">
@@ -749,96 +841,15 @@
         </div>
     </section>
 
-    <!-- Apps Section -->
-    <section id="apps" class="apps">
-        <div class="container">
-            <h2 class="section-title">Professional Apps for Every Trade</h2>
-            <p class="section-subtitle">Specialized tools built for your specific industry</p>
-            
-            <div class="apps-grid">
-                <!-- Electrician Pro X -->
-                <div class="app-card featured">
-                    <div class="app-icon"><img src="images/icon.png" alt="Electrician Pro X" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
-                    <h3>Electrician Pro X</h3>
-                    <div class="app-status available">Available Now</div>
-                    <p>The complete business management app for electrical contractors. Manage your entire operation from your phone.</p>
-                    <ul class="app-features">
-                        <li>30+ NEC code calculators built-in</li>
-                        <li>Job management with photo documentation</li>
-                        <li>Professional estimates & invoices</li>
-                        <li>Team collaboration & assignments</li>
-                        <li>Time tracking & labor analytics</li>
-                        <li>Electrical materials database</li>
-                    </ul>
-                    <div class="app-download">
-                        <div class="download-options">
-                            <a href="https://apps.apple.com/app/id6755925920" class="store-badge" target="_blank" rel="noopener">
-                                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 44px;">
-                            </a>
-                            <a href="https://play.google.com/store/apps/details?id=com.electricianprox.app" class="store-badge" target="_blank" rel="noopener">
-                                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="height: 44px;">
-                            </a>
-                            <span class="download-divider">or</span>
-                            <a href="https://electrician.proxtrades.com" class="web-app-btn" target="_blank" rel="noopener">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                                </svg>
-                                Launch Web App
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- HVAC Pro X -->
-                <div class="app-card">
-                    <div class="app-icon">❄️</div>
-                    <h3>HVAC Pro X</h3>
-                    <div class="app-status coming-soon">Coming Soon</div>
-                    <p>Designed for heating, ventilation, and air conditioning professionals. Manage installations and service contracts.</p>
-                    <ul class="app-features">
-                        <li>HVAC equipment database</li>
-                        <li>Maintenance scheduling</li>
-                        <li>Service contract tracking</li>
-                        <li>Equipment specs & manuals</li>
-                        <li>Load calculations</li>
-                    </ul>
-                    <div class="app-download">
-                        <a href="#contact" class="btn btn-outline">Get Notified</a>
-                    </div>
-                </div>
-
-                <!-- Plumber Pro X -->
-                <div class="app-card">
-                    <div class="app-icon">🔧</div>
-                    <h3>Plumber Pro X</h3>
-                    <div class="app-status coming-soon">Coming Soon</div>
-                    <p>Built for plumbing professionals. Track service calls, create estimates, and manage your plumbing business.</p>
-                    <ul class="app-features">
-                        <li>Plumbing fixtures database</li>
-                        <li>Emergency call management</li>
-                        <li>Permit & inspection tracking</li>
-                        <li>Water system documentation</li>
-                        <li>Project timelines</li>
-                    </ul>
-                    <div class="app-download">
-                        <a href="#contact" class="btn btn-outline">Get Notified</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Why Choose Section -->
     <section class="why-choose">
         <div class="container">
-            <h2 class="section-title">Why Trade Pros Choose Us</h2>
-            <p class="section-subtitle">Built by people who understand the trades</p>
+            <h2 class="section-title">Why Electricians Choose Electrician Pro X</h2>
+        
             <div class="why-grid">
                 <div class="why-item">
                     <h3>Industry-Specific</h3>
-                    <p>Not a generic tool. Built with features trade professionals actually need and use daily.</p>
+                    <p>Not a generic tool. Built with features electrical contractors actually need and use every day on the job.</p>
                 </div>
                 <div class="why-item">
                     <h3>Professional Grade</h3>
@@ -846,13 +857,125 @@
                 </div>
                 <div class="why-item">
                     <h3>All-in-One</h3>
-                    <p>Jobs, estimates, invoices, time tracking, and analytics. Everything in one place.</p>
+                    <p>Jobs, estimates, invoices, time tracking, and analytics. Everything in one place — no juggling apps.</p>
                 </div>
                 <div class="why-item">
                     <h3>Works Anywhere</h3>
-                    <p>On the job site or in the office. Your data syncs across all your devices.</p>
+                    <p>On the job site or in the office. Your data syncs across all your devices in real time.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Start Free. Upgrade When Ready.</h2>
+            <p class="section-subtitle">No credit card required to get started</p>
+
+            <div class="pricing-toggle-wrap">
+                <span class="pricing-toggle-label active" id="lbl-mo">Monthly</span>
+                <div class="pricing-toggle-track" id="px-toggle">
+                    <div class="pricing-toggle-thumb"></div>
+                </div>
+                <span class="pricing-toggle-label" id="lbl-yr">Annual</span>
+                <span class="pricing-save-badge">Save 36%</span>
+            </div>
+
+            <div class="pricing-cards">
+
+                <!-- Free Plan -->
+                <div class="pricing-card">
+                    <p class="pricing-plan-name">Free</p>
+                    <div class="pricing-price-row">
+                        <span class="pricing-dollar">$</span>
+                        <span class="pricing-amount">0</span>
+                        <span class="pricing-period">/mo</span>
+                    </div>
+                    <p class="pricing-annual-note">Always free — no credit card</p>
+                    <hr class="pricing-divider">
+                    <p class="pricing-desc">Try the app and see if it fits your workflow before committing to anything.</p>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#555" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Up to 3 jobs, 3 estimates, 3 invoices
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#555" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            30+ NEC code calculators (always free)
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#555" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Professional branded PDF estimates &amp; invoices
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#555" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            iOS &amp; Android apps
+                        </li>
+                        <li class="unavailable">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#3a3a3a" stroke-width="1.5"/><path d="M6 12l6-6M6 6l6 6" stroke="#3a3a3a" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            Unlimited jobs &amp; documents
+                        </li>
+                        <li class="unavailable">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#3a3a3a" stroke-width="1.5"/><path d="M6 12l6-6M6 6l6 6" stroke="#3a3a3a" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            AI estimate generation
+                        </li>
+                        <li class="unavailable">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#3a3a3a" stroke-width="1.5"/><path d="M6 12l6-6M6 6l6 6" stroke="#3a3a3a" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            Online invoice payments
+                        </li>
+                    </ul>
+                    <a href="https://apps.apple.com/app/id6755925920" class="pricing-cta free" target="_blank" rel="noopener">Download Free</a>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="pricing-card featured">
+                    <div class="pricing-featured-badge">Most Popular</div>
+                    <p class="pricing-plan-name">Pro</p>
+                    <div class="pricing-price-row">
+                        <span class="pricing-dollar">$</span>
+                        <span class="pricing-amount" id="px-price">12</span>
+                        <span class="pricing-period">/mo</span>
+                    </div>
+                    <p class="pricing-annual-note" id="px-note">&nbsp;</p>
+                    <hr class="pricing-divider">
+                    <p class="pricing-desc">The complete toolkit for running a professional electrical contracting business.</p>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#F7C600" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Unlimited jobs, estimates &amp; invoices
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#F7C600" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            AI-powered estimate generation
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#F7C600" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Online invoice payments via Stripe
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#F7C600" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Time tracking &amp; labor analytics
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#F7C600" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Team collaboration &amp; job assignments
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#F7C600" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Photo documentation per job
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#F7C600" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Business analytics dashboard
+                        </li>
+                    </ul>
+                    <a href="https://apps.apple.com/app/id6755925920" class="pricing-cta pro" id="px-cta" target="_blank" rel="noopener">Get Pro — $12.99/mo</a>
+                </div>
+
+            </div>
+
+            <p class="pricing-guarantee">Cancel anytime. NEC calculators remain free forever, regardless of plan.</p>
         </div>
     </section>
 
@@ -860,12 +983,12 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Questions? Get in Touch</h2>
-            <p class="section-subtitle">We're here to help you grow your business</p>
+            <p class="section-subtitle">We're here to help you get the most out of Electrician Pro X</p>
             <div class="contact-content">
-                <p>Have questions about our apps or want to be notified when new apps launch? Drop us a line.</p>
+                <p>Have a question about the app, need support, or want to share feedback? Send us an email and we'll get back to you.</p>
                 <div class="contact-email">
-                    <span>📧</span>
-                    <p><a href="mailto:support@proxtrades.com">support@proxtrades.com</a></p>
+                    <span>&#9993;</span>
+                    <a href="mailto:support@proxtrades.com">support@proxtrades.com</a>
                 </div>
             </div>
         </div>
@@ -877,21 +1000,15 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>ProXTrades</h3>
-                    <p>Professional business management solutions for trade professionals. Built to help you work smarter and grow your business.</p>
+                    <p>Professional business management tools for electrical contractors. Built by a journeyman electrician to help you run a better business.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Electrician Pro X</h4>
                     <ul>
-                        <li><a href="https://apps.apple.com/app/id6755925920">Download iOS App</a></li>
-                        <li><a href="https://play.google.com/store/apps/details?id=com.electricianprox.app">Download Android App</a></li>
-                        <li><a href="https://electrician.proxtrades.com">Launch Web App</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Coming Soon</h4>
-                    <ul>
-                        <li><a href="#apps">HVAC Pro X</a></li>
-                        <li><a href="#apps">Plumber Pro X</a></li>
+                        <li><a href="https://apps.apple.com/app/id6755925920" target="_blank" rel="noopener">Download iOS App</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.electricianprox.app" target="_blank" rel="noopener">Download Android App</a></li>
+                        <li><a href="https://electrician.proxtrades.com" target="_blank" rel="noopener">Launch Web App</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -906,7 +1023,41 @@
                     <p><a href="mailto:support@proxtrades.com">support@proxtrades.com</a></p>
                 </div>
             </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pro X Trades LLC. All rights reserved.</p>
+                <p>Built for electricians, by an electrician.</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Pricing toggle script -->
+    <script>
+        (function () {
+            var annual = false;
+            var toggle = document.getElementById('px-toggle');
+            var price  = document.getElementById('px-price');
+            var note   = document.getElementById('px-note');
+            var cta    = document.getElementById('px-cta');
+            var lblMo  = document.getElementById('lbl-mo');
+            var lblYr  = document.getElementById('lbl-yr');
+
+            toggle.addEventListener('click', function () {
+                annual = !annual;
+                toggle.classList.toggle('annual', annual);
+                lblMo.classList.toggle('active', !annual);
+                lblYr.classList.toggle('active', annual);
+                if (annual) {
+                    price.textContent = '8';
+                    note.innerHTML = '<span>$99.99 billed annually</span> — 2 months free';
+                    cta.textContent = 'Get Pro — $99.99/yr';
+                } else {
+                    price.textContent = '12';
+                    note.innerHTML = '&nbsp;';
+                    cta.textContent = 'Get Pro — $12.99/mo';
+                }
+            });
+        })();
+    </script>
+
 </body>
 </html>
