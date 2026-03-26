@@ -5,19 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electrician Pro X — Run Your Electrical Business Like a Pro</title>
     <meta name="description" content="The complete business management app for electrical contractors. Jobs, estimates, invoices, time tracking, and 20+ NEC calculators — all in one app.">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Reset & Base */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
             --primary: #F7C600;
@@ -31,12 +26,9 @@
             --text-muted: #666666;
             --border: #444444;
             --success: #10B981;
-            --danger: #DC2626;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -45,722 +37,171 @@
             line-height: 1.6;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        a { color: inherit; text-decoration: none; }
 
         /* Header */
         .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
             background: rgba(41, 41, 41, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
         }
-
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 72px;
-        }
-
-        .logo h1 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            letter-spacing: -0.5px;
-        }
-
-        .nav {
-            display: flex;
-            gap: 32px;
-        }
-
-        .nav a {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            transition: color 0.2s;
-        }
-
-        .nav a:hover {
-            color: var(--primary);
-        }
+        .header .container { display: flex; justify-content: space-between; align-items: center; height: 72px; }
+        .logo h1 { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+        .nav { display: flex; gap: 32px; }
+        .nav a { font-size: 0.95rem; font-weight: 500; color: var(--text-secondary); transition: color 0.2s; }
+        .nav a:hover { color: var(--primary); }
 
         /* Buttons */
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 28px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: none;
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 14px 28px; font-size: 1rem; font-weight: 600;
+            border-radius: 8px; cursor: pointer; transition: all 0.2s; border: none;
         }
+        .btn-primary { background: var(--primary); color: #000; }
+        .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(247,198,0,0.3); }
+        .btn-secondary { background: transparent; color: var(--text-primary); border: 2px solid var(--border); }
+        .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
 
-        .btn-primary {
-            background: var(--primary);
-            color: #000;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-light);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(247, 198, 0, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-            border: 2px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            padding: 12px 24px;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: #000;
-        }
-
-        /* Hero Section */
+        /* Hero */
         .hero {
             padding: 160px 0 100px;
             background: linear-gradient(180deg, var(--bg-dark) 0%, #303030 100%);
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
-
         .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(247, 198, 0, 0.08) 0%, transparent 70%);
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(247,198,0,0.08) 0%, transparent 70%);
             pointer-events: none;
         }
+        .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero-content h2 { font-size: 3.2rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+        .hero-content h2 span { color: var(--primary); }
+        .hero-subtitle { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 40px; line-height: 1.7; }
+        .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+        .hero-image { position: relative; display: flex; justify-content: center; }
+        .hero-phones { position: relative; width: 100%; max-width: 500px; }
+        .phone-mockup { width: 240px; height: auto; border-radius: 32px; box-shadow: 0 24px 48px rgba(0,0,0,0.4); border: 1px solid var(--border); }
+        .phone-mockup.phone-1 { position: relative; z-index: 2; }
+        .phone-mockup.phone-2 { position: absolute; right: 0; top: 40px; z-index: 1; opacity: 0.9; }
 
-        .hero .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
+        /* Section shared */
+        .section-title { font-size: 2.4rem; font-weight: 700; text-align: center; margin-bottom: 16px; letter-spacing: -0.5px; }
+        .section-subtitle { text-align: center; color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 60px; }
 
-        .hero-content h2 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: -1px;
-        }
-
-        .hero-content h2 span {
-            color: var(--primary);
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            line-height: 1.7;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .hero-image {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-phones {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-        }
-
-        .phone-mockup {
-            width: 240px;
-            height: auto;
-            border-radius: 32px;
-            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--border);
-        }
-
-        .phone-mockup.phone-1 {
-            position: relative;
-            z-index: 2;
-        }
-
-        .phone-mockup.phone-2 {
-            position: absolute;
-            right: 0;
-            top: 40px;
-            z-index: 1;
-            opacity: 0.9;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 100px 0;
-            background: var(--bg-dark);
-        }
-
-        .section-title {
-            font-size: 2.4rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 16px;
-            letter-spacing: -0.5px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 60px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
+        /* Features */
+        .features { padding: 100px 0; background: var(--bg-dark); }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .feature-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
-            transition: all 0.3s;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; transition: all 0.3s;
         }
-
-        .feature-card:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--primary);
-            transform: translateY(-4px);
-        }
-
+        .feature-card:hover { background: var(--bg-card-hover); border-color: var(--primary); transform: translateY(-4px); }
         .feature-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(247, 198, 0, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            width: 52px; height: 52px; background: rgba(247,198,0,0.1);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
         }
+        .feature-icon svg { width: 24px; height: 24px; stroke: var(--primary); }
+        .feature-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; }
+        .feature-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
 
-        .feature-card h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
+        /* Why Choose */
+        .why-choose { padding: 100px 0; background: #303030; }
+        .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+        .why-item { text-align: center; padding: 24px; }
+        .why-item h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 10px; color: var(--primary); }
+        .why-item p { color: var(--text-secondary); font-size: 0.95rem; }
 
-        .feature-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Why Choose Section */
-        .why-choose {
-            padding: 100px 0;
-            background: #303030;
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-        }
-
-        .why-item {
-            text-align: center;
-            padding: 24px;
-        }
-
-        .why-item h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--primary);
-        }
-
-        .why-item p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 100px 0;
-            background: var(--bg-dark);
-        }
-
-        .pricing-toggle-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            margin-bottom: 48px;
-            flex-wrap: wrap;
-        }
-
-        .pricing-toggle-label {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: color 0.2s;
-            user-select: none;
-        }
-
-        .pricing-toggle-label.active {
-            color: var(--text-primary);
-        }
-
-        .pricing-toggle-track {
-            width: 52px;
-            height: 28px;
-            background: var(--primary);
-            border-radius: 14px;
-            position: relative;
-            cursor: pointer;
-            flex-shrink: 0;
-        }
-
-        .pricing-toggle-thumb {
-            width: 22px;
-            height: 22px;
-            background: var(--bg-dark);
-            border-radius: 50%;
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            transition: transform 0.2s;
-        }
-
-        .pricing-toggle-track.annual .pricing-toggle-thumb {
-            transform: translateX(24px);
-        }
-
-        .pricing-save-badge {
-            background: var(--primary);
-            color: #000;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 4px 10px;
-            border-radius: 4px;
-        }
-
+        /* Pricing */
+        .pricing { padding: 100px 0; background: var(--bg-dark); }
         .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 760px;
-            margin: 0 auto 40px;
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 20px; max-width: 960px; margin: 0 auto 40px;
         }
-
         .pricing-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 36px 32px;
-            position: relative;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 36px 28px;
+            position: relative; display: flex; flex-direction: column;
         }
-
-        .pricing-card.featured {
-            border: 2px solid var(--primary);
-        }
-
+        .pricing-card.featured { border: 2px solid var(--primary); }
         .pricing-featured-badge {
-            position: absolute;
-            top: -13px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: #000;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 4px 14px;
-            border-radius: 4px;
-            white-space: nowrap;
+            position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+            background: var(--primary); color: #000;
+            font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 4px 14px; border-radius: 4px; white-space: nowrap;
         }
-
-        .pricing-plan-name {
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
-        .pricing-card.featured .pricing-plan-name {
-            color: var(--primary);
-        }
-
-        .pricing-price-row {
-            display: flex;
-            align-items: baseline;
-            gap: 4px;
-            margin-bottom: 6px;
-        }
-
-        .pricing-dollar {
-            font-size: 22px;
-            font-weight: 700;
-        }
-
-        .pricing-amount {
-            font-size: 56px;
-            font-weight: 800;
-            line-height: 1;
-        }
-
-        .pricing-period {
-            font-size: 14px;
-            color: var(--text-muted);
-            align-self: flex-end;
-            margin-bottom: 8px;
-        }
-
-        .pricing-annual-note {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            min-height: 20px;
-        }
-
-        .pricing-annual-note span {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .pricing-divider {
-            border: none;
-            border-top: 1px solid var(--border);
-            margin: 0 0 20px;
-        }
-
-        .pricing-desc {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 24px;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 28px;
-            display: flex;
-            flex-direction: column;
-            gap: 11px;
-        }
-
-        .pricing-features li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.4;
-        }
-
-        .pricing-features li.unavailable {
-            color: var(--text-muted);
-        }
-
-        .pricing-features li svg {
-            flex-shrink: 0;
-            margin-top: 1px;
-        }
-
+        .pricing-plan-name { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+        .pricing-card.featured .pricing-plan-name { color: var(--primary); }
+        .pricing-price-row { display: flex; align-items: baseline; gap: 3px; margin-bottom: 6px; }
+        .pricing-dollar { font-size: 20px; font-weight: 700; }
+        .pricing-amount { font-size: 48px; font-weight: 800; line-height: 1; }
+        .pricing-period { font-size: 14px; color: var(--text-muted); align-self: flex-end; margin-bottom: 6px; }
+        .pricing-note { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; min-height: 18px; }
+        .pricing-note span { color: var(--primary); font-weight: 600; }
+        .pricing-divider { border: none; border-top: 1px solid var(--border); margin: 0 0 18px; }
+        .pricing-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; }
+        .pricing-features { list-style: none; margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; flex-grow: 1; }
+        .pricing-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: var(--text-secondary); line-height: 1.4; }
+        .pricing-features li.unavailable { color: var(--text-muted); }
+        .pricing-features li svg { flex-shrink: 0; margin-top: 1px; }
         .pricing-cta {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            border-radius: 8px;
-            font-size: 15px;
-            font-weight: 700;
-            text-align: center;
-            cursor: pointer;
-            text-decoration: none;
-            letter-spacing: 0.02em;
-            transition: opacity 0.15s, transform 0.1s;
-            box-sizing: border-box;
+            display: block; width: 100%; padding: 13px; border-radius: 8px;
+            font-size: 14px; font-weight: 700; text-align: center; cursor: pointer;
+            text-decoration: none; letter-spacing: 0.02em;
+            transition: opacity 0.15s, transform 0.1s; box-sizing: border-box; margin-top: auto;
         }
+        .pricing-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+        .pricing-cta.free { background: transparent; border: 1.5px solid var(--border); color: var(--text-secondary); }
+        .pricing-cta.pro { background: var(--primary); color: #000; border: none; }
+        .pricing-guarantee { text-align: center; font-size: 13px; color: var(--text-muted); max-width: 440px; margin: 0 auto; line-height: 1.6; }
 
-        .pricing-cta:hover {
-            opacity: 0.88;
-            transform: translateY(-1px);
-        }
-
-        .pricing-cta.free {
-            background: transparent;
-            border: 1.5px solid var(--border);
-            color: var(--text-secondary);
-        }
-
-        .pricing-cta.pro {
-            background: var(--primary);
-            color: #000;
-            border: none;
-        }
-
-        .pricing-guarantee {
-            text-align: center;
-            font-size: 13px;
-            color: var(--text-muted);
-            max-width: 420px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 100px 0;
-            background: linear-gradient(180deg, var(--bg-dark) 0%, #222222 100%);
-        }
-
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-content > p {
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-        }
-
+        /* Contact */
+        .contact { padding: 100px 0; background: linear-gradient(180deg, var(--bg-dark) 0%, #222 100%); }
+        .contact-content { max-width: 600px; margin: 0 auto; text-align: center; }
+        .contact-content > p { color: var(--text-secondary); margin-bottom: 32px; }
         .contact-email {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-size: 1.1rem;
+            display: inline-flex; align-items: center; gap: 12px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            padding: 16px 32px; border-radius: 12px; font-size: 1.1rem;
         }
-
-        .contact-email a {
-            color: var(--primary);
-            font-weight: 500;
-        }
-
-        .contact-email a:hover {
-            text-decoration: underline;
-        }
+        .contact-email a { color: var(--primary); font-weight: 500; }
+        .contact-email a:hover { text-decoration: underline; }
 
         /* Footer */
-        .footer {
-            padding: 60px 0 30px;
-            background: #222222;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 48px;
-        }
-
-        .footer-brand h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
-
-        .footer-brand p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .footer-links h4,
-        .footer-contact h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .footer-contact p,
-        .footer-contact a {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .footer-contact a:hover {
-            color: var(--primary);
-        }
-
-        .footer-bottom {
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-bottom p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        /* Download options (used in hero area) */
-        .store-badge img {
-            height: 44px;
-            transition: transform 0.2s;
-        }
-
-        .store-badge:hover img {
-            transform: scale(1.05);
-        }
-
-        .web-app-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--bg-card);
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.2s;
-        }
-
-        .web-app-btn:hover {
-            background: var(--primary);
-            color: #000;
-        }
-
-        .web-app-btn svg {
-            width: 18px;
-            height: 18px;
-        }
+        .footer { padding: 60px 0 30px; background: #222; border-top: 1px solid var(--border); }
+        .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+        .footer-brand h3 { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+        .footer-brand p { color: var(--text-secondary); font-size: 0.9rem; }
+        .footer-links h4, .footer-contact h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 16px; color: var(--text-primary); }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: var(--text-secondary); font-size: 0.9rem; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-contact p, .footer-contact a { color: var(--text-secondary); font-size: 0.9rem; }
+        .footer-contact a:hover { color: var(--primary); }
+        .footer-bottom { padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .footer-bottom p { color: var(--text-muted); font-size: 0.85rem; }
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero .container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-content h2 {
-                font-size: 2.5rem;
-            }
-
-            .hero-cta {
-                justify-content: center;
-            }
-
-            .hero-image {
-                display: none;
-            }
-
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .why-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .hero .container { grid-template-columns: 1fr; text-align: center; }
+            .hero-content h2 { font-size: 2.5rem; }
+            .hero-cta { justify-content: center; }
+            .hero-image { display: none; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-cards { grid-template-columns: 1fr; max-width: 420px; }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
         }
-
         @media (max-width: 640px) {
-            .nav {
-                display: none;
-            }
-
-            .hero {
-                padding: 120px 0 60px;
-            }
-
-            .hero-content h2 {
-                font-size: 2rem;
-            }
-
-            .features-grid,
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-            }
+            .nav { display: none; }
+            .hero { padding: 120px 0 60px; }
+            .hero-content h2 { font-size: 2rem; }
+            .features-grid, .why-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
         }
     </style>
 </head>
@@ -769,9 +210,7 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="logo">
-                <h1>ProXTrades</h1>
-            </div>
+            <div class="logo"><h1>ProXTrades</h1></div>
             <nav class="nav">
                 <a href="#features">Features</a>
                 <a href="#pricing">Pricing</a>
@@ -780,7 +219,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -801,51 +240,70 @@
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Features -->
     <section id="features" class="features">
         <div class="container">
             <h2 class="section-title">Everything You Need to Run Your Business</h2>
             <p class="section-subtitle">Professional tools that help you work smarter, not harder</p>
             <div class="features-grid">
+
                 <div class="feature-card">
-                    <div class="feature-icon">📋</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+                    </div>
                     <h3>Job Management</h3>
                     <p>Track jobs from first call to final payment. Schedule, assign, and monitor progress with photo documentation.</p>
                 </div>
+
                 <div class="feature-card">
-                    <div class="feature-icon">💰</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+                    </div>
                     <h3>Estimates &amp; Invoices</h3>
                     <p>Create professional estimates in minutes. Convert to invoices with one tap. Send PDFs directly to clients.</p>
                 </div>
+
                 <div class="feature-card">
-                    <div class="feature-icon">⏱️</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
                     <h3>Time Tracking</h3>
                     <p>Clock in and out on jobs. Track labor hours automatically. Know exactly where your time goes.</p>
                 </div>
+
                 <div class="feature-card">
-                    <div class="feature-icon">👥</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
                     <h3>Team Collaboration</h3>
                     <p>Invite team members to jobs. Everyone stays in sync with shared job details and updates.</p>
                 </div>
+
                 <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
                     <h3>Materials Database</h3>
                     <p>Access thousands of industry-specific parts and materials. Build accurate estimates faster.</p>
                 </div>
+
                 <div class="feature-card">
-                    <div class="feature-icon">📊</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
                     <h3>Business Analytics</h3>
                     <p>See your revenue, track paid vs pending invoices, and understand your business performance.</p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Section -->
+    <!-- Why Choose -->
     <section class="why-choose">
         <div class="container">
             <h2 class="section-title">Why Electricians Choose Electrician Pro X</h2>
-        
+            <p class="section-subtitle">Built by a journeyman electrician who understood exactly what was missing</p>
             <div class="why-grid">
                 <div class="why-item">
                     <h3>Industry-Specific</h3>
@@ -867,24 +325,15 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
+    <!-- Pricing -->
     <section id="pricing" class="pricing">
         <div class="container">
             <h2 class="section-title">Start Free. Upgrade When Ready.</h2>
             <p class="section-subtitle">No credit card required to get started</p>
 
-            <div class="pricing-toggle-wrap">
-                <span class="pricing-toggle-label active" id="lbl-mo">Monthly</span>
-                <div class="pricing-toggle-track" id="px-toggle">
-                    <div class="pricing-toggle-thumb"></div>
-                </div>
-                <span class="pricing-toggle-label" id="lbl-yr">Annual</span>
-                <span class="pricing-save-badge">Save 36%</span>
-            </div>
-
             <div class="pricing-cards">
 
-                <!-- Free Plan -->
+                <!-- Free -->
                 <div class="pricing-card">
                     <p class="pricing-plan-name">Free</p>
                     <div class="pricing-price-row">
@@ -892,7 +341,7 @@
                         <span class="pricing-amount">0</span>
                         <span class="pricing-period">/mo</span>
                     </div>
-                    <p class="pricing-annual-note">Always free — no credit card</p>
+                    <p class="pricing-note">Always free — no credit card</p>
                     <hr class="pricing-divider">
                     <p class="pricing-desc">Try the app and see if it fits your workflow before committing to anything.</p>
                     <ul class="pricing-features">
@@ -902,11 +351,11 @@
                         </li>
                         <li>
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#555" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            20+ NEC code calculators 
+                            20+ NEC code calculators (always free)
                         </li>
                         <li>
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#555" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            Professional branded PDF estimates &amp; invoices
+                            Professional branded PDFs
                         </li>
                         <li>
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#555" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -928,18 +377,62 @@
                     <a href="https://apps.apple.com/app/id6755925920" class="pricing-cta free" target="_blank" rel="noopener">Download Free</a>
                 </div>
 
-                <!-- Pro Plan -->
-                <div class="pricing-card featured">
-                    <div class="pricing-featured-badge">Most Popular</div>
-                    <p class="pricing-plan-name">Pro</p>
+                <!-- Monthly -->
+                <div class="pricing-card">
+                    <p class="pricing-plan-name">Pro Monthly</p>
                     <div class="pricing-price-row">
                         <span class="pricing-dollar">$</span>
-                        <span class="pricing-amount" id="px-price">12</span>
+                        <span class="pricing-amount">12.99</span>
                         <span class="pricing-period">/mo</span>
                     </div>
-                    <p class="pricing-annual-note" id="px-note">&nbsp;</p>
+                    <p class="pricing-note">Billed monthly, cancel anytime</p>
                     <hr class="pricing-divider">
-                    <p class="pricing-desc">The complete toolkit for running a professional electrical contracting business.</p>
+                    <p class="pricing-desc">Full access to every Pro feature with the flexibility of month-to-month billing.</p>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#777" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#777" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Unlimited jobs, estimates &amp; invoices
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#777" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#777" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            AI-powered estimate generation
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#777" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#777" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Online invoice payments via Stripe
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#777" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#777" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Time tracking &amp; labor analytics
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#777" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#777" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Team collaboration &amp; job assignments
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#777" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#777" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Photo documentation per job
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#777" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#777" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Business analytics dashboard
+                        </li>
+                    </ul>
+                    <a href="https://apps.apple.com/app/id6755925920" class="pricing-cta free" target="_blank" rel="noopener">Get Pro Monthly</a>
+                </div>
+
+                <!-- Annual -->
+                <div class="pricing-card featured">
+                    <div class="pricing-featured-badge">Best Value</div>
+                    <p class="pricing-plan-name">Pro Annual</p>
+                    <div class="pricing-price-row">
+                        <span class="pricing-dollar">$</span>
+                        <span class="pricing-amount">99.99</span>
+                        <span class="pricing-period">/yr</span>
+                    </div>
+                    <p class="pricing-note"><span>Only $8.33/mo</span> — 2 months free</p>
+                    <hr class="pricing-divider">
+                    <p class="pricing-desc">Everything in Pro at the best price. Save 36% compared to monthly billing.</p>
                     <ul class="pricing-features">
                         <li>
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#F7C600" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -970,7 +463,7 @@
                             Business analytics dashboard
                         </li>
                     </ul>
-                    <a href="https://apps.apple.com/app/id6755925920" class="pricing-cta pro" id="px-cta" target="_blank" rel="noopener">Get Pro — $12.99/mo</a>
+                    <a href="https://apps.apple.com/app/id6755925920" class="pricing-cta pro" target="_blank" rel="noopener">Get Pro Annual — $99.99/yr</a>
                 </div>
 
             </div>
@@ -979,7 +472,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Questions? Get in Touch</h2>
@@ -1029,42 +522,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Pricing toggle script -->
-    <script>
-        (function () {
-            var annual = true;
-            var toggle = document.getElementById('px-toggle');
-            var price  = document.getElementById('px-price');
-            var note   = document.getElementById('px-note');
-            var cta    = document.getElementById('px-cta');
-            var lblMo  = document.getElementById('lbl-mo');
-            var lblYr  = document.getElementById('lbl-yr');
-
-            toggle.classList.add('annual');
-            lblMo.classList.remove('active');
-            lblYr.classList.add('active');
-            price.textContent = '8';
-            note.innerHTML = '<span>$99.99 billed annually</span>';
-            cta.textContent = 'Get Pro — $99.99/yr';
-
-            toggle.addEventListener('click', function () {
-                annual = !annual;
-                toggle.classList.toggle('annual', annual);
-                lblMo.classList.toggle('active', !annual);
-                lblYr.classList.toggle('active', annual);
-                if (annual) {
-                    price.textContent = '8';
-                    note.innerHTML = '<span>$99.99 billed annually</span>';
-                    cta.textContent = 'Get Pro — $99.99/yr';
-                } else {
-                    price.textContent = '12';
-                    note.innerHTML = '&nbsp;';
-                    cta.textContent = 'Get Pro — $12.99/mo';
-                }
-            });
-        })();
-    </script>
 
 </body>
 </html>
