@@ -1033,13 +1033,20 @@
     <!-- Pricing toggle script -->
     <script>
         (function () {
-            var annual = false;
+            var annual = true;
             var toggle = document.getElementById('px-toggle');
             var price  = document.getElementById('px-price');
             var note   = document.getElementById('px-note');
             var cta    = document.getElementById('px-cta');
             var lblMo  = document.getElementById('lbl-mo');
             var lblYr  = document.getElementById('lbl-yr');
+
+            toggle.classList.add('annual');
+            lblMo.classList.remove('active');
+            lblYr.classList.add('active');
+            price.textContent = '8';
+            note.innerHTML = '<span>$99.99 billed annually</span> — 2 months free';
+            cta.textContent = 'Get Pro — $99.99/yr';
 
             toggle.addEventListener('click', function () {
                 annual = !annual;
