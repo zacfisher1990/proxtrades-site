@@ -106,6 +106,15 @@
         .feature-icon svg { width: 24px; height: 24px; stroke: var(--primary); }
         .feature-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; }
         .feature-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        .feature-screenshot {
+            margin-top: 24px; border-radius: 16px; overflow: hidden;
+            border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            aspect-ratio: 9/19.5; background: #1a1a1a;
+        }
+        .feature-screenshot img {
+            width: 100%; height: 100%; object-fit: cover; object-position: top;
+            display: block; border-radius: 16px;
+        }
 
         /* Why Choose */
         .why-choose { padding: 100px 0; background: #303030; }
@@ -253,6 +262,9 @@
                     </div>
                     <h3>Job Management</h3>
                     <p>Track jobs from first call to final payment. Schedule, assign, and monitor progress with photo documentation.</p>
+                    <div class="feature-screenshot">
+                        <img src="images/jobs.png" alt="Job Management screen">
+                    </div>
                 </div>
 
                 <div class="feature-card">
@@ -261,6 +273,9 @@
                     </div>
                     <h3>Estimates &amp; Invoices</h3>
                     <p>Create professional estimates in minutes. Convert to invoices with one tap. Send PDFs directly to clients.</p>
+                    <div class="feature-screenshot">
+                        <img src="images/estimate-invoice.png" alt="Estimates and Invoices screen">
+                    </div>
                 </div>
 
                 <div class="feature-card">
@@ -269,6 +284,9 @@
                     </div>
                     <h3>Time Tracking</h3>
                     <p>Clock in and out on jobs. Track labor hours automatically. Know exactly where your time goes.</p>
+                    <div class="feature-screenshot">
+                        <img src="images/time-card.png" alt="Time Tracking screen">
+                    </div>
                 </div>
 
                 <div class="feature-card">
@@ -277,6 +295,9 @@
                     </div>
                     <h3>Team Collaboration</h3>
                     <p>Invite team members to jobs. Everyone stays in sync with shared job details and updates.</p>
+                    <div class="feature-screenshot">
+                        <img src="images/team-collaboration.png" alt="Team Collaboration screen">
+                    </div>
                 </div>
 
                 <div class="feature-card">
@@ -285,6 +306,9 @@
                     </div>
                     <h3>Materials Database</h3>
                     <p>Access thousands of industry-specific parts and materials. Build accurate estimates faster.</p>
+                    <div class="feature-screenshot">
+                        <img src="images/material-database.png" alt="Materials Database screen">
+                    </div>
                 </div>
 
                 <div class="feature-card">
@@ -293,6 +317,9 @@
                     </div>
                     <h3>Business Analytics</h3>
                     <p>See your revenue, track paid vs pending invoices, and understand your business performance.</p>
+                    <div class="feature-screenshot">
+                        <img src="images/analytics.png" alt="Business Analytics screen">
+                    </div>
                 </div>
 
             </div>
@@ -514,14 +541,3 @@
                 <div class="footer-contact">
                     <h4>Contact</h4>
                     <p><a href="mailto:support@proxtrades.com">support@proxtrades.com</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Pro X Trades LLC. All rights reserved.</p>
-                <p>Built for electricians, by an electrician.</p>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
