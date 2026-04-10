@@ -5,141 +5,335 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Account - Electrician Pro X</title>
     <meta name="description" content="Instructions for deleting your Electrician Pro X account and data.">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
     <style>
-        .delete-content {
-            max-width: 700px;
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --yellow: #f5c518;
+            --black: #111111;
+            --dark: #1a1a1a;
+            --card: #222222;
+            --border: #2e2e2e;
+            --text: #e8e8e8;
+            --muted: #888888;
+            --red: #ff4444;
+            --red-bg: #2a1111;
+            --red-border: #5a2020;
+            --blue: #4a9eff;
+            --blue-bg: #0d1f33;
+            --blue-border: #1e3a55;
+        }
+
+        body {
+            background: var(--black);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: var(--dark);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 760px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
         }
-        .delete-content h1 {
-            color: #1e293b;
-            margin-bottom: 1.5rem;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
         }
-        .delete-content h2 {
-            color: #334155;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
+
+        .logo-mark {
+            width: 32px;
+            height: 32px;
+            background: var(--yellow);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DM Mono', monospace;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--black);
+            letter-spacing: -0.5px;
         }
-        .delete-content p, .delete-content li {
-            color: #475569;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-        .delete-content ol {
-            padding-left: 1.5rem;
-        }
-        .delete-content li {
-            margin-bottom: 0.75rem;
-        }
-        .warning-box {
-            background-color: #fef2f2;
-            border: 1px solid #fecaca;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-        .warning-box p {
-            color: #991b1b;
-            margin: 0;
-        }
-        .contact-box {
-            background-color: #f0f9ff;
-            border: 1px solid #bae6fd;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-        .contact-box p {
-            color: #0369a1;
-            margin: 0;
-        }
-        .contact-box a {
-            color: #0284c7;
+
+        .logo-text {
+            font-size: 15px;
             font-weight: 600;
+            color: var(--text);
+            letter-spacing: -0.3px;
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+
+        nav a:hover { color: var(--text); }
+
+        /* Main content */
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+        }
+
+        .page-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--yellow);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 1.05rem;
+            margin-bottom: 3rem;
+            max-width: 560px;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h2::before {
+            content: '';
+            display: block;
+            width: 3px;
+            height: 16px;
+            background: var(--yellow);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        p { color: var(--muted); margin-bottom: 0.75rem; }
+
+        /* Steps */
+        .steps {
+            list-style: none;
+            counter-reset: steps;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .steps li {
+            counter-increment: steps;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+            font-size: 15px;
+        }
+
+        .steps li:last-child { border-bottom: none; }
+
+        .steps li::before {
+            content: counter(steps);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 24px;
+            height: 24px;
+            background: var(--yellow);
+            color: var(--black);
+            border-radius: 50%;
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        strong { color: var(--text); font-weight: 600; }
+
+        /* Data list */
+        .data-list {
+            list-style: none;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .data-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .data-list li:last-child { border-bottom: none; }
+
+        .data-list li::before {
+            content: '×';
+            color: var(--red);
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        /* Alert boxes */
+        .alert {
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin: 2rem 0;
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        .alert-warning {
+            background: var(--red-bg);
+            border-color: var(--red-border);
+        }
+
+        .alert-warning p { color: #ff8080; margin: 0; }
+        .alert-warning strong { color: #ffaaaa; }
+
+        .alert-info {
+            background: var(--blue-bg);
+            border-color: var(--blue-border);
+        }
+
+        .alert-info p { color: #7ab8ff; margin: 0; }
+        .alert-info a { color: var(--blue); font-weight: 600; text-decoration: none; }
+        .alert-info a:hover { text-decoration: underline; }
+        .alert-info p + p { margin-top: 0.5rem; }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--muted);
+            font-size: 13px;
+            margin: 0;
+        }
+
+        footer a { color: var(--muted); text-decoration: none; }
+        footer a:hover { color: var(--text); }
+
+        @media (max-width: 480px) {
+            main { padding: 2.5rem 1.25rem 4rem; }
+            header { padding: 0 1.25rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html" style="text-decoration: none; color: inherit;"><h1>ProXTrades</h1></a>
-            </div>
-            <nav class="nav">
-                <a href="index.html#features">Features</a>
-                <a href="index.html#apps">Our Apps</a>
-                <a href="index.html#contact">Contact</a>
+
+    <header>
+        <div class="header-inner">
+            <a href="/" class="logo">
+                <div class="logo-mark">PX</div>
+                <span class="logo-text">Pro X Trades</span>
+            </a>
+            <nav>
+                <a href="/">Home</a>
             </nav>
         </div>
     </header>
 
-    <!-- Delete Account Content -->
-    <main class="delete-content">
+    <main>
+        <div class="page-label">Account Management</div>
         <h1>Delete Your Account</h1>
-        
-        <p>We're sorry to see you go. If you'd like to delete your Electrician Pro X account and all associated data, you can do so directly within the app or by contacting us.</p>
+        <p class="lead">You can delete your Electrician Pro X account and all associated data directly from within the app, or by contacting us.</p>
 
-        <h2>Delete Account In-App</h2>
-        <ol>
-            <li>Open the Electrician Pro X app on your device</li>
-            <li>Go to the <strong>Account</strong> tab</li>
-            <li>Scroll down and tap the <strong>Delete Account</strong> button (red button)</li>
-            <li>Confirm your decision when prompted</li>
-        </ol>
-
-        <h2>What Gets Deleted</h2>
-        <p>When you delete your account, the following data will be permanently removed:</p>
-        <ul>
-            <li>Your account profile and login credentials</li>
-            <li>All jobs, estimates, and invoices you've created</li>
-            <li>Photos and documents attached to your jobs</li>
-            <li>Time tracking records and analytics data</li>
-            <li>Team associations and job invitations</li>
-        </ul>
-
-        <div class="warning-box">
-            <p><strong>Warning:</strong> Account deletion is permanent and cannot be undone. Please make sure to export any data you need before deleting your account.</p>
+        <div class="section">
+            <h2>Delete In-App</h2>
+            <ol class="steps">
+                <li>Open the <strong>Electrician Pro X</strong> app on your device</li>
+                <li>Tap the <strong>menu icon (☰)</strong> in the top-right corner of the header</li>
+                <li>Select <strong>Settings</strong> from the menu</li>
+                <li>Scroll to the bottom and tap <strong>Delete Account</strong></li>
+                <li>Confirm your decision when prompted — deletion is immediate</li>
+            </ol>
         </div>
 
-        <h2>Need Help?</h2>
-        <p>If you're unable to access the app or need assistance with account deletion, please contact us:</p>
-        
-        <div class="contact-box">
-            <p>Email: <a href="mailto:support@proxtrades.com">support@proxtrades.com</a></p>
-            <p style="margin-top: 0.5rem;">Please include the email address associated with your account in your request.</p>
+        <div class="section">
+            <h2>What Gets Deleted</h2>
+            <ul class="data-list">
+                <li>Account profile and login credentials</li>
+                <li>All jobs, estimates, and invoices</li>
+                <li>Photos and documents attached to jobs</li>
+                <li>Time tracking records and analytics data</li>
+                <li>Team associations and job invitations</li>
+            </ul>
         </div>
 
-        <p>We typically process deletion requests within 48 hours of receiving them.</p>
+        <div class="alert alert-warning">
+            <p><strong>This action is permanent and cannot be undone.</strong> Export any data you need before deleting your account.</p>
+        </div>
+
+        <div class="section">
+            <h2>Need Help?</h2>
+            <p>If you can't access the app or need assistance, email us and we'll process your request within 48 hours.</p>
+            <div class="alert alert-info">
+                <p>Email: <a href="mailto:support@proxtrades.com">support@proxtrades.com</a></p>
+                <p>Please include the email address associated with your account.</p>
+            </div>
+        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>ProXTrades</h3>
-                    <p>Professional Trade Management Solutions</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms of Service</a></li>
-                        <li><a href="delete-account.html">Delete Account</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <p><a href="mailto:support@proxtrades.com">support@proxtrades.com</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Pro X Trades LLC. All rights reserved.</p>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2025 Pro X Trades LLC &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms of Service</a></p>
     </footer>
+
 </body>
 </html>
