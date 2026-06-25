@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electrician Pro X — Run Your Electrical Business Like a Pro</title>
-    <meta name="description" content="The complete business management app for electrical contractors. Jobs, estimates, invoices, time tracking, and 20+ NEC calculators — all in one app. By Pro X Trades.">
+    <title>Pro X Trades — Mobile Software for the Skilled Trades</title>
+    <meta name="description" content="Pro X Trades LLC builds purpose-built mobile apps for skilled tradespeople. Our flagship app, Electrician Pro X, is the CRM built exclusively for electrical contractors.">
 
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -53,10 +53,6 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        @keyframes pulse-badge {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(247,198,0,0.4); }
-            50% { box-shadow: 0 0 0 8px rgba(247,198,0,0); }
-        }
         @keyframes slide-in-left {
             from { opacity: 0; transform: translateX(-24px); }
             to { opacity: 1; transform: translateX(0); }
@@ -93,7 +89,7 @@
             text-transform: uppercase;
             line-height: 1;
         }
-        .logo-by {
+        .logo-tag {
             font-size: 0.62rem; font-weight: 500;
             color: var(--text-muted);
             letter-spacing: 0.08em;
@@ -118,12 +114,12 @@
 
         /* ── HERO ── */
         .hero {
-            padding: 150px 0 90px;
+            padding: 150px 0 100px;
             position: relative; overflow: hidden;
             background: var(--bg);
+            text-align: center;
         }
 
-        /* Circuit grid background */
         .hero::before {
             content: '';
             position: absolute; inset: 0;
@@ -131,25 +127,19 @@
                 linear-gradient(var(--border) 1px, transparent 1px),
                 linear-gradient(90deg, var(--border) 1px, transparent 1px);
             background-size: 60px 60px;
-            opacity: 0.25;
-            mask-image: radial-gradient(ellipse 80% 80% at 70% 50%, black 30%, transparent 80%);
+            opacity: 0.2;
+            mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
         }
-        /* Yellow radial glow */
         .hero::after {
             content: '';
-            position: absolute; top: 10%; right: 10%;
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(247,198,0,0.07) 0%, transparent 65%);
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 700px; height: 500px;
+            background: radial-gradient(circle, rgba(247,198,0,0.06) 0%, transparent 65%);
             pointer-events: none;
         }
 
-        .hero .container {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 60px; align-items: center;
-            position: relative; z-index: 1;
-        }
+        .hero .container { position: relative; z-index: 1; max-width: 860px; }
 
-        /* Trust bar */
         .hero-eyebrow {
             display: inline-flex; align-items: center; gap: 8px;
             background: rgba(247,198,0,0.08);
@@ -162,33 +152,32 @@
             text-transform: uppercase;
             margin-bottom: 28px;
         }
-        .hero-eyebrow::before { content: '⚡'; font-size: 0.85rem; }
 
-        .hero-content h1 {
+        .hero h1 {
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: 4.4rem; font-weight: 900;
+            font-size: 5rem; font-weight: 900;
             line-height: 0.95;
             letter-spacing: -0.5px;
             margin-bottom: 28px;
             text-transform: uppercase;
         }
-        .hero-content h1 em {
+        .hero h1 em {
             font-style: normal;
             color: var(--yellow);
             display: block;
         }
 
         .hero-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-sub);
-            margin-bottom: 38px;
+            margin: 0 auto 44px;
             line-height: 1.7;
-            max-width: 480px;
+            max-width: 620px;
         }
 
-        /* CTA group */
-        .hero-cta { display: flex; flex-direction: column; gap: 12px; margin-bottom: 44px; }
-        .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+        .hero-cta {
+            display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+        }
 
         .btn {
             display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -199,7 +188,6 @@
         }
         .btn-primary {
             background: var(--yellow); color: #000;
-            box-shadow: 0 0 0 0 var(--yellow-glow);
         }
         .btn-primary:hover {
             background: #ffd93d;
@@ -211,91 +199,16 @@
             border: 1.5px solid var(--border-bright);
         }
         .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
-        .btn-ghost {
-            background: transparent; color: var(--text-sub);
-            padding: 12px 0; font-size: 0.9rem;
-        }
-        .btn-ghost:hover { color: var(--text); }
-        .btn-ghost::after { content: ' →'; }
 
-        /* App store badges */
-        .hero-ratings {
-            display: flex; gap: 24px; flex-wrap: wrap;
-        }
-        .rating-badge {
-            display: flex; align-items: center; gap: 8px;
-            font-size: 0.82rem; color: var(--text-sub);
-        }
-        .rating-badge .stars { color: var(--yellow); letter-spacing: -1px; font-size: 0.85rem; }
-        .rating-badge strong { color: var(--text); font-weight: 600; }
-
-        /* Hero phone */
-        .hero-visual {
-            position: relative; display: flex;
-            justify-content: center; align-items: center;
-        }
-        .hero-phones {
-            position: relative; width: 100%; max-width: 480px;
-            animation: float 6s ease-in-out infinite;
-        }
-        .phone-mockup {
-            width: 230px; height: auto;
-            border-radius: 30px;
-            box-shadow: 0 32px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
-        }
-        .phone-1 { position: relative; z-index: 2; }
-        .phone-2 { position: absolute; right: 0; top: 50px; z-index: 1; opacity: 0.88; }
-
-        /* Floating stat card */
-        .stat-card {
-            position: absolute; bottom: 30px; left: -20px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-bright);
-            border-radius: 12px;
-            padding: 14px 20px;
-            display: flex; align-items: center; gap: 12px;
-            z-index: 10;
-            box-shadow: 0 16px 40px rgba(0,0,0,0.4);
-            animation: slide-in-left 0.8s 0.5s ease both;
-        }
-        .stat-card-icon {
-            width: 36px; height: 36px;
-            background: var(--yellow-dim);
-            border-radius: 8px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.1rem;
-        }
-        .stat-card-text { line-height: 1.3; }
-        .stat-card-text strong { display: block; font-size: 1rem; font-weight: 700; color: var(--yellow); }
-        .stat-card-text span { font-size: 0.78rem; color: var(--text-sub); }
-
-        /* ── TRUST STRIP ── */
-        .trust-strip {
-            background: var(--bg-mid);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 20px 0;
-        }
-        .trust-strip .container {
-            display: flex; justify-content: center;
-            align-items: center; gap: 48px; flex-wrap: wrap;
-        }
-        .trust-item {
-            display: flex; align-items: center; gap: 10px;
-            font-size: 0.85rem; color: var(--text-sub);
-        }
-        .trust-item svg { stroke: var(--yellow); flex-shrink: 0; }
-        .trust-item strong { color: var(--text); font-weight: 600; }
-        .trust-divider { width: 1px; height: 20px; background: var(--border); }
-
-        /* ── FOUNDER SECTION ── */
-        .founder {
+        /* ── MISSION ── */
+        .mission {
             padding: 90px 0;
             background: linear-gradient(135deg, var(--bg-mid) 0%, var(--bg) 60%);
+            border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
             position: relative; overflow: hidden;
         }
-        .founder::before {
+        .mission::before {
             content: '"';
             position: absolute; top: -40px; left: 20px;
             font-family: 'Barlow Condensed', sans-serif;
@@ -305,37 +218,37 @@
             pointer-events: none;
             user-select: none;
         }
-        .founder .container {
+        .mission .container {
             display: grid; grid-template-columns: 1fr 1.2fr;
             gap: 80px; align-items: center;
             position: relative; z-index: 1;
         }
-        .founder-label {
+        .mission-label {
             font-family: 'Barlow Condensed', sans-serif;
             font-size: 0.8rem; font-weight: 700;
             letter-spacing: 0.15em; text-transform: uppercase;
             color: var(--yellow);
             margin-bottom: 20px;
         }
-        .founder h2 {
+        .mission h2 {
             font-family: 'Barlow Condensed', sans-serif;
             font-size: 2.8rem; font-weight: 800;
             line-height: 1.05;
             text-transform: uppercase;
             margin-bottom: 24px;
         }
-        .founder h2 span { color: var(--yellow); }
-        .founder-body {
+        .mission h2 span { color: var(--yellow); }
+        .mission-body {
             color: var(--text-sub); font-size: 1rem;
             line-height: 1.8;
         }
-        .founder-body p + p { margin-top: 16px; }
-        .founder-body strong { color: var(--text); font-weight: 600; }
-        .founder-creds {
+        .mission-body p + p { margin-top: 16px; }
+        .mission-body strong { color: var(--text); font-weight: 600; }
+        .mission-creds {
             margin-top: 32px;
             display: flex; flex-wrap: wrap; gap: 12px;
         }
-        .founder-cred {
+        .mission-cred {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 8px;
@@ -343,34 +256,33 @@
             font-size: 0.82rem; font-weight: 600;
             color: var(--text-sub);
         }
-        .founder-quote {
+        .mission-quote {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-left: 4px solid var(--yellow);
             border-radius: 0 12px 12px 0;
             padding: 36px;
         }
-        .founder-quote blockquote {
+        .mission-quote blockquote {
             font-size: 1.2rem;
             color: var(--text);
             line-height: 1.7;
             font-style: italic;
             margin-bottom: 24px;
         }
-        .founder-quote cite {
+        .mission-quote cite {
             font-style: normal;
             font-size: 0.875rem;
             color: var(--text-sub);
             display: flex; align-items: center; gap: 10px;
         }
-        .founder-quote cite::before {
+        .mission-quote cite::before {
             content: '';
             display: block; width: 28px; height: 2px;
             background: var(--yellow);
         }
 
-        /* ── FEATURES ── */
-        .features { padding: 100px 0; background: var(--bg); }
+        /* ── SECTION HEADERS ── */
         .section-label {
             text-align: center;
             font-family: 'Barlow Condensed', sans-serif;
@@ -390,66 +302,145 @@
             font-size: 1rem; margin-bottom: 64px;
             max-width: 500px; margin-left: auto; margin-right: auto;
         }
-        .features-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+
+        /* ── OUR APPS ── */
+        .apps { padding: 100px 0; background: var(--bg); }
+
+        .apps-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
-        .feature-card {
+
+        .app-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 14px; padding: 28px;
+            border-radius: 16px;
+            padding: 36px 32px;
+            display: flex; flex-direction: column;
             transition: all 0.3s;
-            position: relative; overflow: hidden;
+            position: relative;
         }
-        .feature-card::after {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0; height: 2px;
-            background: var(--yellow);
-            transform: scaleX(0); transform-origin: left;
-            transition: transform 0.3s ease;
+        .app-card.featured {
+            border: 2px solid var(--yellow);
+            background: #262010;
         }
-        .feature-card:hover { background: var(--bg-card-hover); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-        .feature-card:hover::after { transform: scaleX(1); }
-        .feature-icon {
-            width: 46px; height: 46px;
-            background: var(--yellow-dim);
-            border-radius: 10px;
+        .app-card:not(.featured):hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .app-card.featured:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(247,198,0,0.15);
+        }
+
+        .app-badge {
+            position: absolute; top: -13px; left: 28px;
+            background: var(--yellow); color: #000;
+            font-size: 10px; font-weight: 800; letter-spacing: 0.1em;
+            text-transform: uppercase; padding: 4px 14px;
+            border-radius: 4px; white-space: nowrap;
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+
+        .app-icon {
+            width: 56px; height: 56px;
+            border-radius: 14px;
             display: flex; align-items: center; justify-content: center;
-            margin-bottom: 18px;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            background: var(--yellow-dim);
             border: 1px solid rgba(247,198,0,0.12);
         }
-        .feature-icon svg { width: 22px; height: 22px; stroke: var(--yellow); }
-        .feature-card h3 {
+        .app-card.featured .app-icon {
+            background: rgba(247,198,0,0.15);
+        }
+
+        .app-status {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+            text-transform: uppercase; padding: 4px 10px;
+            border-radius: 100px; margin-bottom: 14px;
+            width: fit-content;
+        }
+        .app-status.live {
+            background: rgba(34,197,94,0.12);
+            color: var(--success);
+            border: 1px solid rgba(34,197,94,0.25);
+        }
+        .app-status.live::before {
+            content: '';
+            width: 6px; height: 6px;
+            background: var(--success);
+            border-radius: 50%;
+        }
+        .app-status.soon {
+            background: rgba(247,198,0,0.1);
+            color: var(--yellow);
+            border: 1px solid rgba(247,198,0,0.2);
+        }
+
+        .app-card h3 {
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: 1.2rem; font-weight: 700;
+            font-size: 1.5rem; font-weight: 800;
             text-transform: uppercase; letter-spacing: 0.02em;
             margin-bottom: 10px;
         }
-        .feature-card p { color: var(--text-sub); font-size: 0.92rem; line-height: 1.65; }
-        .feature-screenshot { margin-top: 22px; display: flex; justify-content: center; }
-        .feature-screenshot img { width: 100%; max-width: 240px; height: auto; display: block; border-radius: 8px; }
+        .app-card.featured h3 { color: var(--yellow); }
 
-        /* ── STATS BAR ── */
-        .stats-bar {
-            background: var(--yellow);
-            padding: 56px 0;
+        .app-trade {
+            font-size: 0.82rem; font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.06em; text-transform: uppercase;
+            margin-bottom: 14px;
         }
-        .stats-bar .container {
-            display: grid; grid-template-columns: repeat(4, 1fr);
-            gap: 24px; text-align: center;
-        }
-        .stat-item {}
-        .stat-number {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 3.2rem; font-weight: 900;
-            color: #000; line-height: 1;
-            margin-bottom: 6px;
-        }
-        .stat-label { font-size: 0.85rem; font-weight: 600; color: rgba(0,0,0,0.6); }
 
-        /* ── WHY SECTION ── */
-        .why { padding: 100px 0; background: var(--bg-mid); }
-        .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-        .why-item {
+        .app-desc {
+            color: var(--text-sub); font-size: 0.92rem;
+            line-height: 1.65; margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .app-features-list {
+            list-style: none; margin-bottom: 28px;
+            display: flex; flex-direction: column; gap: 8px;
+        }
+        .app-features-list li {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 0.85rem; color: var(--text-sub);
+        }
+        .app-features-list li::before {
+            content: '';
+            width: 6px; height: 6px;
+            background: var(--yellow); border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .app-links {
+            display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto;
+        }
+
+        .app-link-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 10px 18px; border-radius: 8px;
+            font-size: 0.85rem; font-weight: 600;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        .app-link-btn.primary {
+            background: var(--yellow); color: #000; border: none;
+        }
+        .app-link-btn.primary:hover { background: #ffd93d; transform: translateY(-1px); }
+        .app-link-btn.secondary {
+            background: transparent; color: var(--text-sub);
+            border: 1.5px solid var(--border);
+        }
+        .app-link-btn.secondary:hover { border-color: var(--yellow); color: var(--yellow); }
+
+        /* ── VALUES ── */
+        .values { padding: 100px 0; background: var(--bg-mid); }
+        .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .value-item {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 14px;
@@ -457,8 +448,8 @@
             display: flex; gap: 20px; align-items: flex-start;
             transition: border-color 0.2s;
         }
-        .why-item:hover { border-color: rgba(247,198,0,0.4); }
-        .why-icon {
+        .value-item:hover { border-color: rgba(247,198,0,0.4); }
+        .value-icon {
             flex-shrink: 0;
             width: 44px; height: 44px;
             background: var(--yellow-dim);
@@ -466,77 +457,16 @@
             display: flex; align-items: center; justify-content: center;
             font-size: 1.2rem;
         }
-        .why-text h3 {
+        .value-text h3 {
             font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.1rem; font-weight: 700;
             text-transform: uppercase; letter-spacing: 0.03em;
             margin-bottom: 8px; color: var(--yellow);
         }
-        .why-text p { color: var(--text-sub); font-size: 0.92rem; line-height: 1.65; }
-
-        /* ── PRICING ── */
-        .pricing { padding: 100px 0; background: var(--bg); }
-        .pricing-cards {
-            display: grid; grid-template-columns: repeat(3, 1fr);
-            gap: 20px; max-width: 960px; margin: 0 auto 36px;
-        }
-        .pricing-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 14px; padding: 36px 28px;
-            position: relative; display: flex; flex-direction: column;
-            transition: border-color 0.2s;
-        }
-        .pricing-card.featured {
-            border: 2px solid var(--yellow);
-            background: #262010;
-        }
-        .pricing-badge {
-            position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-            background: var(--yellow); color: #000;
-            font-size: 10px; font-weight: 800; letter-spacing: 0.1em;
-            text-transform: uppercase; padding: 4px 14px;
-            border-radius: 4px; white-space: nowrap;
-            font-family: 'Barlow Condensed', sans-serif;
-        }
-        .pricing-plan {
-            font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
-            text-transform: uppercase; color: var(--text-muted);
-            margin-bottom: 14px;
-        }
-        .pricing-card.featured .pricing-plan { color: var(--yellow); }
-        .pricing-amount-row { display: flex; align-items: baseline; gap: 3px; margin-bottom: 6px; }
-        .pricing-dollar { font-size: 18px; font-weight: 700; }
-        .pricing-number {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 52px; font-weight: 900; line-height: 1;
-        }
-        .pricing-per { font-size: 13px; color: var(--text-muted); align-self: flex-end; margin-bottom: 8px; }
-        .pricing-note { font-size: 12.5px; color: var(--text-muted); margin-bottom: 20px; min-height: 18px; }
-        .pricing-note span { color: var(--yellow); font-weight: 600; }
-        .pricing-divider { border: none; border-top: 1px solid var(--border); margin: 0 0 18px; }
-        .pricing-desc { font-size: 13.5px; color: var(--text-sub); line-height: 1.6; margin-bottom: 20px; }
-        .pricing-features { list-style: none; margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; flex-grow: 1; }
-        .pricing-features li {
-            display: flex; align-items: flex-start; gap: 10px;
-            font-size: 13px; color: var(--text-sub); line-height: 1.4;
-        }
-        .pricing-features li.off { color: var(--text-muted); }
-        .pricing-features li svg { flex-shrink: 0; margin-top: 1px; }
-        .pricing-btn {
-            display: block; width: 100%; padding: 13px;
-            border-radius: 8px; font-size: 13.5px; font-weight: 700;
-            text-align: center; cursor: pointer; text-decoration: none;
-            transition: all 0.2s; margin-top: auto;
-            letter-spacing: 0.02em;
-        }
-        .pricing-btn.free { background: transparent; border: 1.5px solid var(--border); color: var(--text-sub); }
-        .pricing-btn.free:hover { border-color: var(--text-sub); color: var(--text); }
-        .pricing-btn.pro { background: var(--yellow); color: #000; border: none; }
-        .pricing-btn.pro:hover { background: #ffd93d; transform: translateY(-1px); }
-        .pricing-guarantee { text-align: center; font-size: 13px; color: var(--text-muted); max-width: 420px; margin: 0 auto; line-height: 1.6; }
+        .value-text p { color: var(--text-sub); font-size: 0.92rem; line-height: 1.65; }
 
         /* ── CONTACT ── */
-        .contact { padding: 90px 0; background: var(--bg-mid); border-top: 1px solid var(--border); }
+        .contact { padding: 90px 0; background: var(--bg); border-top: 1px solid var(--border); }
         .contact-inner { max-width: 560px; margin: 0 auto; text-align: center; }
         .contact-inner > p { color: var(--text-sub); margin-bottom: 32px; line-height: 1.7; }
         .contact-email {
@@ -560,6 +490,10 @@
             color: var(--yellow); margin-bottom: 4px;
             text-transform: uppercase; letter-spacing: 0.03em;
         }
+        .footer-brand-tag {
+            font-size: 0.72rem; color: var(--text-muted);
+            letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px;
+        }
         .footer-brand p { color: var(--text-sub); font-size: 0.88rem; line-height: 1.7; max-width: 280px; }
         .footer-col h4 { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); margin-bottom: 18px; }
         .footer-col ul { list-style: none; }
@@ -575,76 +509,18 @@
 
         /* ── RESPONSIVE ── */
         @media (max-width: 1024px) {
-            .hero .container { grid-template-columns: 1fr; text-align: center; }
-            .hero-content h1 { font-size: 3.4rem; }
-            .hero-subtitle { max-width: 560px; margin-left: auto; margin-right: auto; }
-            .hero-ratings { justify-content: center; }
-            .cta-row { justify-content: center; }
-            .hero-eyebrow { margin-left: auto; margin-right: auto; }
-            .hero-visual { display: none; }
-            .founder .container { grid-template-columns: 1fr; gap: 40px; }
-            .features-grid { grid-template-columns: repeat(2, 1fr); }
-            .why-grid { grid-template-columns: 1fr; }
-            .stats-bar .container { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-            .pricing-cards { grid-template-columns: 1fr; max-width: 420px; }
+            .hero h1 { font-size: 3.8rem; }
+            .mission .container { grid-template-columns: 1fr; gap: 40px; }
+            .apps-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+            .values-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
-        /* ── HERO SIGNUP ROW ── */
-        .hero-signup {
-            display: flex; gap: 10px; margin-bottom: 16px;
-            max-width: 460px;
-        }
-        .hero-signup-input {
-            flex: 1; min-width: 0;
-            background: var(--bg-card);
-            border: 1.5px solid var(--border-bright);
-            border-radius: 8px;
-            padding: 13px 16px;
-            font-size: 0.95rem; font-family: 'DM Sans', sans-serif;
-            color: var(--text);
-            outline: none;
-            transition: border-color 0.2s;
-        }
-        .hero-signup-input::placeholder { color: var(--text-muted); }
-        .hero-signup-input:focus { border-color: var(--yellow); }
-        .hero-signup-btn {
-            white-space: nowrap;
-            background: var(--yellow); color: #000;
-            border: none; border-radius: 8px;
-            padding: 13px 22px;
-            font-size: 0.95rem; font-weight: 700;
-            font-family: 'DM Sans', sans-serif;
-            cursor: pointer;
-            transition: all 0.2s;
-            flex-shrink: 0;
-        }
-        .hero-signup-btn:hover {
-            background: #ffd93d;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(247,198,0,0.3);
-        }
-        .hero-signup-note {
-            font-size: 0.78rem; color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-        .hero-divider {
-            display: flex; align-items: center; gap: 12px;
-            margin-bottom: 14px; max-width: 460px;
-        }
-        .hero-divider-line { flex: 1; height: 1px; background: var(--border); }
-        .hero-divider-text { font-size: 0.75rem; color: var(--text-muted); white-space: nowrap; }
-
         @media (max-width: 640px) {
             .nav { display: none; }
-            .hero { padding: 110px 0 60px; }
-            .hero-content h1 { font-size: 2.6rem; }
-            .hero-signup { max-width: 100%; }
-            .hero-signup-input { font-size: 1rem; }
-            .features-grid { grid-template-columns: 1fr; }
+            .hero { padding: 110px 0 70px; }
+            .hero h1 { font-size: 2.8rem; }
             .section-title { font-size: 2.2rem; }
-            .trust-strip .container { gap: 20px; }
-            .trust-divider { display: none; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
         }
     </style>
@@ -655,14 +531,14 @@
     <header class="header">
         <div class="container">
             <a href="/" class="logo">
-                <span class="logo-name">Electrician Pro X</span>
-                <span class="logo-by">by Pro X Trades</span>
+                <span class="logo-name">Pro X Trades</span>
+                <span class="logo-tag">Mobile Software for the Trades</span>
             </a>
             <nav class="nav">
-                <a href="#features">Features</a>
-                <a href="#pricing">Pricing</a>
+                <a href="#apps">Our Apps</a>
+                <a href="#about">About</a>
                 <a href="#contact">Contact</a>
-                <a href="https://apps.apple.com/app/id6755925920" class="nav-cta" target="_blank" rel="noopener">Download App</a>
+                <a href="https://electricianprox.com" class="nav-cta" target="_blank" rel="noopener">Electrician Pro X</a>
             </nav>
         </div>
     </header>
@@ -670,391 +546,182 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-eyebrow animate-up" style="display:inline-flex;">The CRM Built Exclusively for Electricians</div>
-                <h1 class="animate-up-2">
-                    Manage Clients.<br>Win More Jobs.
-                    <em>Get Paid Faster.</em>
-                </h1>
-                <p class="hero-subtitle animate-up-3">
-                    Electrician Pro X is the only CRM designed from the ground up for electrical contractors.
-                    Clients, jobs, estimates, invoices, and payments — plus 20+ NEC calculators for when you're on the job.
-                </p>
-                <div class="hero-cta animate-up-4">
-                    <!-- Email signup row -->
-                    <div class="hero-signup">
-                        <input
-                            type="email"
-                            id="hero-email"
-                            class="hero-signup-input"
-                            placeholder="Enter your email address"
-                            autocomplete="email"
-                        >
-                        <button class="hero-signup-btn" onclick="handleHeroSignup()">Get Started Free</button>
-                    </div>
-                    <p class="hero-signup-note">Free plan available · No credit card required</p>
-
-                    <!-- Divider -->
-                    <div class="hero-divider">
-                        <div class="hero-divider-line"></div>
-                        <span class="hero-divider-text">or download the app</span>
-                        <div class="hero-divider-line"></div>
-                    </div>
-
-                    <div class="cta-row">
-                        <a href="https://apps.apple.com/app/id6755925920" class="btn btn-primary" target="_blank" rel="noopener">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                            Download for iOS
-                        </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.electricianprox.app" class="btn btn-outline" target="_blank" rel="noopener">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.24.99.2l12.6-6.97-2.71-2.71-10.88 9.48zm-1.97-20.6C1.07 3.44 1 3.73 1 4.04v15.91c0 .31.07.6.21.86l.1.1 8.91-8.91v-.21L1.21 3.06l-.01.1zM20.4 10.6l-2.68-1.48-3.02 3.02 3.02 3.02 2.7-1.49c.77-.43.77-1.63-.02-2.07zM4.17.24L16.77 7.2l-2.71 2.71L3.18.44C3.48.06 3.87-.07 4.17.24z"/></svg>
-                            Download for Android
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-ratings animate-up-4">
-                    <div class="rating-badge">
-                        <span class="stars">★★★★★</span>
-                        <span><strong>App Store</strong> · iOS</span>
-                    </div>
-                    <div class="rating-badge">
-                        <span class="stars">★★★★★</span>
-                        <span><strong>Play Store</strong> · Android</span>
-                    </div>
-                    <div class="rating-badge">
-                        <span>🆓</span>
-                        <span>Free plan available</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-visual">
-                <div class="hero-phones">
-                    <img src="images/invoice.png" alt="Electrician Pro X Jobs Screen" class="phone-mockup phone-1">
-                    <img src="images/estimate.png" alt="Electrician Pro X Estimates Screen" class="phone-mockup phone-2">
-                </div>
-                <div class="stat-card">
-                    <div class="stat-card-icon">⚡</div>
-                    <div class="stat-card-text">
-                        <strong>CRM + Job Tools</strong>
-                        <span>Built for electricians</span>
-                    </div>
-                </div>
+            <div class="hero-eyebrow animate-up">Pro X Trades LLC</div>
+            <h1 class="animate-up-2">
+                Software Built for<br>
+                <em>The Skilled Trades.</em>
+            </h1>
+            <p class="hero-subtitle animate-up-3">
+                We build purpose-built mobile apps for skilled tradespeople — tools designed around how you actually work, not adapted from generic business software.
+            </p>
+            <div class="hero-cta animate-up-4">
+                <a href="#apps" class="btn btn-primary">See Our Apps</a>
+                <a href="#about" class="btn btn-outline">About the Company</a>
             </div>
         </div>
     </section>
 
-    <!-- TRUST STRIP -->
-    <div class="trust-strip">
+    <!-- OUR APPS -->
+    <section id="apps" class="apps">
         <div class="container">
-            <div class="trust-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                <span>Available on iOS, Android &amp; Web</span>
-            </div>
-            <div class="trust-divider"></div>
-            <div class="trust-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Free plan</strong> — no credit card required</span>
-            </div>
-            <div class="trust-divider"></div>
-            <div class="trust-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                <span><strong>AI estimates</strong> — built for electrical scopes</span>
-            </div>
-            <div class="trust-divider"></div>
-            <div class="trust-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                <span><strong>20+ NEC calculators</strong> — free on every plan</span>
+            <p class="section-label reveal">Our Products</p>
+            <h2 class="section-title reveal">Apps Built for<br>Each Trade.</h2>
+            <p class="section-sub reveal">Every trade deserves software that speaks its language. We build dedicated apps — not one-size-fits-all tools adapted from something else.</p>
+
+            <div class="apps-grid">
+
+                <!-- Electrician Pro X -->
+                <div class="app-card featured reveal">
+                    <div class="app-badge">Flagship App</div>
+                    <div class="app-icon">⚡</div>
+                    <div class="app-status live">Available Now</div>
+                    <p class="app-trade">For Electrical Contractors</p>
+                    <h3>Electrician Pro X</h3>
+                    <p class="app-desc">
+                        The CRM built exclusively for electrical contractors. Manage clients, jobs, estimates, and invoices — plus 20+ NEC calculators and field tools baked right in.
+                    </p>
+                    <ul class="app-features-list">
+                        <li>Client & job management CRM</li>
+                        <li>AI-powered estimates & invoices</li>
+                        <li>Online payments via Stripe</li>
+                        <li>20+ NEC calculators — free on every plan</li>
+                        <li>Time tracking & team collaboration</li>
+                        <li>iOS, Android & Web</li>
+                    </ul>
+                    <div class="app-links">
+                        <a href="https://electricianprox.com" class="app-link-btn primary" target="_blank" rel="noopener">
+                            Visit electricianprox.com
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                        <a href="https://apps.apple.com/app/id6755925920" class="app-link-btn secondary" target="_blank" rel="noopener">Download App</a>
+                    </div>
+                </div>
+
+                <!-- Coming Soon 1 -->
+                <div class="app-card reveal">
+                    <div class="app-icon">🔧</div>
+                    <div class="app-status soon">Coming Soon</div>
+                    <p class="app-trade">For Plumbing Contractors</p>
+                    <h3>Plumber Pro X</h3>
+                    <p class="app-desc">
+                        A dedicated CRM for plumbing contractors — built from the ground up for how plumbers run their business, not adapted from a generic tool.
+                    </p>
+                    <ul class="app-features-list">
+                        <li>Job & client management</li>
+                        <li>Estimates & invoicing</li>
+                        <li>Trade-specific field tools</li>
+                        <li>Team scheduling & dispatch</li>
+                    </ul>
+                    <div class="app-links">
+                        <a href="mailto:support@proxtrades.com?subject=Plumber Pro X Interest" class="app-link-btn secondary">Get Notified</a>
+                    </div>
+                </div>
+
+                <!-- Coming Soon 2 -->
+                <div class="app-card reveal">
+                    <div class="app-icon">❄️</div>
+                    <div class="app-status soon">Coming Soon</div>
+                    <p class="app-trade">For HVAC Contractors</p>
+                    <h3>HVAC Pro X</h3>
+                    <p class="app-desc">
+                        Business management software designed specifically for HVAC contractors — with tools for maintenance schedules, equipment tracking, and trade-specific workflows.
+                    </p>
+                    <ul class="app-features-list">
+                        <li>Job & client management</li>
+                        <li>Estimates & invoicing</li>
+                        <li>Equipment & service history</li>
+                        <li>Trade-specific field tools</li>
+                    </ul>
+                    <div class="app-links">
+                        <a href="mailto:support@proxtrades.com?subject=HVAC Pro X Interest" class="app-link-btn secondary">Get Notified</a>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- FOUNDER SECTION -->
-    <section class="founder">
+    <!-- ABOUT / MISSION -->
+    <section id="about" class="mission">
         <div class="container">
             <div>
-                <p class="founder-label">Why Electricians Need Their Own CRM</p>
-                
-                <div class="founder-body">
+                <p class="mission-label">Our Mission</p>
+                <h2>Software That <span>Speaks Your Language.</span></h2>
+                <div class="mission-body">
                     <p>
-                        <strong>Jobber, Housecall Pro, ServiceTitan</strong> — built for "home services." That means plumbers, landscapers, HVAC techs. Electrical contractors get shoehorned into a generic mold that was never designed for the way they actually work.
+                        <strong>Jobber, Housecall Pro, ServiceTitan</strong> — built for "home services." That means one tool crammed with generic workflows for every trade. Electricians, plumbers, and HVAC techs all get shoehorned into the same mold, one that was never designed for any of them specifically.
                     </p>
                     <p>
-                        Electrician Pro X is a CRM built exclusively for electrical contractors. Every client record, every job workflow, every estimate and invoice — designed around how electrical businesses actually operate, not adapted from something else.
+                        At Pro X Trades LLC, we take a different approach. We build a dedicated app for each trade — one that understands how that trade works, what paperwork they produce, what tools they need on the job site, and how their business actually runs.
                     </p>
                     <p>
-                        And because it's built for electricians specifically, you get something no generic CRM offers: 20+ NEC calculators and code reference tools baked right in, ready whenever you need them on the job site. Your office software and your field tools — in one app.
+                        Our first app, Electrician Pro X, is the CRM built exclusively for electrical contractors. Each new app we build will bring that same level of craft to another trade.
                     </p>
                 </div>
-                <div class="founder-creds">
-                    <span class="founder-cred">🏢 CRM Built for Electrical Contractors</span>
-                    <span class="founder-cred">🤖 AI Estimating for Electrical Scopes</span>
-                    <span class="founder-cred">📐 20+ NEC Calculators Included</span>
+                <div class="mission-creds">
+                    <span class="mission-cred">🏢 Trade-Specific Software</span>
+                    <span class="mission-cred">📱 Mobile-First Design</span>
+                    <span class="mission-cred">⚙️ Built for the Field</span>
                 </div>
             </div>
-            <div class="founder-quote">
+            <div class="mission-quote">
                 <blockquote>
-                    "Every other app in this market was built for 'home services.' That means the same tool a plumber or landscaper uses. Electricians aren't an afterthought of another trade — they deserve a CRM that actually speaks their language."
+                    "Every trade deserves software that was actually built for them. Not a generic CRM with their trade's name slapped on it — real tools built around how they work."
                 </blockquote>
-                <cite>Pro X Trades &mdash; Built for the electrical trade</cite>
+                <cite>Pro X Trades LLC &mdash; Built for the trades</cite>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES -->
-    <section id="features" class="features">
+    <!-- VALUES -->
+    <section class="values">
         <div class="container">
-            <p class="section-label reveal">Your CRM + Your Field Tools</p>
-            <h2 class="section-title reveal">Everything in One App.<br>Nothing Bolted On.</h2>
-            <p class="section-sub reveal">A full client and job management CRM — with on-the-job tools that only make sense in an app built for electricians.</p>
-            <div class="features-grid">
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
-                    </div>
-                    <h3>Client & Job Management</h3>
-                    <p>Keep every client, every job, and every conversation in one place. Schedule, assign, and track progress from first call to final payment.</p>
-                    <div class="feature-screenshot">
-                        <img src="images/jobs.png" alt="Job Management screen">
+            <p class="section-label reveal">How We Build</p>
+            <h2 class="section-title reveal">Our Approach.</h2>
+            <p class="section-sub reveal">The principles that guide every app we build.</p>
+            <div class="values-grid reveal">
+                <div class="value-item">
+                    <div class="value-icon">🎯</div>
+                    <div class="value-text">
+                        <h3>Trade-Specific</h3>
+                        <p>We build one app per trade, not one app for every trade. Each product is purpose-built for the workflows, documents, and field tools that trade actually uses.</p>
                     </div>
                 </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
-                    </div>
-                    <h3>Estimates &amp; Invoices</h3>
-                    <p>Build professional estimates with AI Assist trained on electrical scopes of work. Convert to invoices in one tap and collect payment online.</p>
-                    <div class="feature-screenshot">
-                        <img src="images/estimate-invoice.png" alt="Estimates and Invoices screen">
+                <div class="value-item">
+                    <div class="value-icon">📱</div>
+                    <div class="value-text">
+                        <h3>Mobile-First</h3>
+                        <p>Tradespeople work in the field. Every app we build is designed for a phone first — fast, reliable, and useful whether you're in the office or on the job site.</p>
                     </div>
                 </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <h3>Time Tracking</h3>
-                    <p>Clock in and out on jobs. Track labor hours per job automatically so your estimates get sharper every time you use them.</p>
-                    <div class="feature-screenshot">
-                        <img src="images/time-card.png" alt="Time Tracking screen">
+                <div class="value-item">
+                    <div class="value-icon">⚡</div>
+                    <div class="value-text">
+                        <h3>Office & Field in One</h3>
+                        <p>Business management tools and trade-specific field tools — all in the same app. No switching between a CRM and a separate reference tool.</p>
                     </div>
                 </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h3>Team Collaboration</h3>
-                    <p>Invite team members to jobs. Everyone stays in sync with shared job details and real-time updates.</p>
-                    <div class="feature-screenshot">
-                        <img src="images/team-collaboration.png" alt="Team Collaboration screen">
-                    </div>
-                </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </div>
-                    <h3>NEC Calculators &amp; Field Tools</h3>
-                    <p>20+ NEC code calculators and reference tools built right in — wire sizing, conduit fill, load calculations, and more. The bonus no generic CRM can offer.</p>
-                    <div class="feature-screenshot">
-                        <img src="images/material-database.png" alt="Materials Database screen">
-                    </div>
-                </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                    </div>
-                    <h3>Business Analytics</h3>
-                    <p>Track revenue, outstanding invoices, and job history. Know which clients are most valuable and where your time is actually going.</p>
-                    <div class="feature-screenshot">
-                        <img src="images/analytics.png" alt="Business Analytics screen">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- STATS BAR -->
-    <div class="stats-bar">
-        <div class="container">
-            <div class="stat-item">
-                <div class="stat-number">20+</div>
-                <div class="stat-label">NEC Field Tools Included Free</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">3</div>
-                <div class="stat-label">Platforms — iOS, Android, Web</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">$0</div>
-                <div class="stat-label">To Start — Free Plan Always</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">1</div>
-                <div class="stat-label">CRM Built for Electricians</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- WHY CHOOSE -->
-    <section class="why">
-        <div class="container">
-            <p class="section-label reveal">Why Electricians Choose EPX</p>
-            <h2 class="section-title reveal">A CRM That Speaks<br>Your Language.</h2>
-            <p class="section-sub reveal">Generic CRMs make you adapt to them. Electrician Pro X was built around how electrical contractors actually run their business.</p>
-            <div class="why-grid reveal">
-                <div class="why-item">
-                    <div class="why-icon">🏢</div>
-                    <div class="why-text">
-                        <h3>Built for Electricians</h3>
-                        <p>Not a generic tool adapted from plumbing or landscaping software. Every client record, job workflow, and document was designed with electrical contracting in mind.</p>
-                    </div>
-                </div>
-                <div class="why-item">
-                    <div class="why-icon">📄</div>
-                    <div class="why-text">
-                        <h3>Win Jobs Professionally</h3>
-                        <p>AI-assisted estimates, sequential numbering, branded PDFs, and e-signature support. Look like the professional operation your clients are hiring.</p>
-                    </div>
-                </div>
-                <div class="why-item">
-                    <div class="why-icon">⚡</div>
-                    <div class="why-text">
-                        <h3>Field Tools Included</h3>
-                        <p>20+ NEC calculators and code reference tools built in for free — wire sizing, conduit fill, load calcs, and more. No other electrician CRM includes this.</p>
-                    </div>
-                </div>
-                <div class="why-item">
-                    <div class="why-icon">📶</div>
-                    <div class="why-text">
-                        <h3>Office to Job Site</h3>
-                        <p>iOS, Android, and web. Everything syncs in real time — manage clients from the office, pull up NEC calculators on the job site, all in the same app.</p>
+                <div class="value-item">
+                    <div class="value-icon">🆓</div>
+                    <div class="value-text">
+                        <h3>Free to Start</h3>
+                        <p>Every app we build includes a free plan. Tradespeople shouldn't have to pay just to try software — get started free, upgrade when it earns it.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <p class="section-label reveal">Pricing</p>
-            <h2 class="section-title reveal">Start Free.<br>Upgrade When Ready.</h2>
-            <p class="section-sub reveal">Full CRM features on every plan. NEC calculators and field tools are free forever — no upgrade required.</p>
-
-            <div class="pricing-cards reveal">
-
-                <!-- Free -->
-                <div class="pricing-card">
-                    <p class="pricing-plan">Free</p>
-                    <div class="pricing-amount-row">
-                        <span class="pricing-dollar">$</span>
-                        <span class="pricing-number">0</span>
-                        <span class="pricing-per">/mo</span>
-                    </div>
-                    <p class="pricing-note">Always free — no credit card</p>
-                    <hr class="pricing-divider">
-                    <p class="pricing-desc">Try the full CRM and see if it fits your workflow — no credit card, no commitment.</p>
-                    <ul class="pricing-features">
-                        <li>
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#555" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            Up to 3 jobs, 3 estimates, 3 invoices
-                        </li>
-                        <li>
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#555" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            20+ NEC code calculators (always free)
-                        </li>
-                        <li>
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#555" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            Professional branded PDFs
-                        </li>
-                        <li>
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#555" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            iOS &amp; Android apps
-                        </li>
-                        <li class="off">
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#333" stroke-width="1.5"/><path d="M6 12l6-6M6 6l6 6" stroke="#333" stroke-width="1.5" stroke-linecap="round"/></svg>
-                            Unlimited jobs &amp; documents
-                        </li>
-                        <li class="off">
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#333" stroke-width="1.5"/><path d="M6 12l6-6M6 6l6 6" stroke="#333" stroke-width="1.5" stroke-linecap="round"/></svg>
-                            AI estimate generation
-                        </li>
-                        <li class="off">
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#333" stroke-width="1.5"/><path d="M6 12l6-6M6 6l6 6" stroke="#333" stroke-width="1.5" stroke-linecap="round"/></svg>
-                            Online invoice payments
-                        </li>
-                    </ul>
-                    <a href="https://apps.apple.com/app/id6755925920" class="pricing-btn free" target="_blank" rel="noopener">Download Free</a>
-                </div>
-
-                <!-- Monthly -->
-                <div class="pricing-card">
-                    <p class="pricing-plan">Pro Monthly</p>
-                    <div class="pricing-amount-row">
-                        <span class="pricing-dollar">$</span>
-                        <span class="pricing-number">12.99</span>
-                        <span class="pricing-per">/mo</span>
-                    </div>
-                    <p class="pricing-note">Billed monthly, cancel anytime</p>
-                    <hr class="pricing-divider">
-                    <p class="pricing-desc">Full access to every Pro feature with the flexibility of month-to-month billing.</p>
-                    <ul class="pricing-features">
-                        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#777" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#777" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited jobs, estimates &amp; invoices</li>
-                        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#777" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#777" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>AI-powered estimate generation</li>
-                        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#777" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#777" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Online invoice payments via Stripe</li>
-                        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#777" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#777" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Time tracking &amp; labor analytics</li>
-                        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#777" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#777" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Team collaboration &amp; job assignments</li>
-                        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#777" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#777" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Photo documentation per job</li>
-                        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#777" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#777" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Business analytics dashboard</li>
-                    </ul>
-                    <a href="https://apps.apple.com/app/id6755925920" class="pricing-btn free" target="_blank" rel="noopener">Get Pro Monthly</a>
-                </div>
-
-                <!-- Annual -->
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">Best Value</div>
-                    <p class="pricing-plan">Pro Annual</p>
-                    <div class="pricing-amount-row">
-                        <span class="pricing-dollar">$</span>
-                        <span class="pricing-number">99.99</span>
-                        <span class="pricing-per">/yr</span>
-                    </div>
-                    <p class="pricing-note"><span>Only $8.33/mo</span> — save 36%</p>
-                    <hr class="pricing-divider">
-                    <p class="pricing-desc">Everything in Pro at the best price. Two months free compared to monthly billing.</p>
-                    <ul class="pricing-features">
-                        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#F7C600" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited jobs, estimates &amp; invoices</li>
-                        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#F7C600" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>AI-powered estimate generation</li>
-                        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#F7C600" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Online invoice payments via Stripe</li>
-                        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#F7C600" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Time tracking &amp; labor analytics</li>
-                        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#F7C600" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Team collaboration &amp; job assignments</li>
-                        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#F7C600" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Photo documentation per job</li>
-                        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#F7C600" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Business analytics dashboard</li>
-                    </ul>
-                    <a href="https://apps.apple.com/app/id6755925920" class="pricing-btn pro" target="_blank" rel="noopener">Get Pro Annual — $99.99/yr</a>
-                </div>
-
-            </div>
-            <p class="pricing-guarantee">Cancel anytime. NEC calculators and field tools remain free forever on every plan.</p>
         </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="contact">
         <div class="container">
-            <p class="section-label reveal">Support</p>
-            <h2 class="section-title reveal">Questions? We're Here.</h2>
+            <p class="section-label reveal">Contact</p>
+            <h2 class="section-title reveal">Get in Touch.</h2>
             <div class="contact-inner reveal">
-                <p>Have a question about the app, need support, or want to share feedback? Send us an email and we'll get back to you quickly.</p>
+                <p>Questions about our apps, partnership inquiries, or feedback? We'd love to hear from you.</p>
                 <a href="mailto:support@proxtrades.com" class="contact-email">
                     <span>✉</span>
-                    <span>support@proxtrades.com</span>
+                    <span><a href="mailto:support@proxtrades.com">support@proxtrades.com</a></span>
                 </a>
             </div>
         </div>
@@ -1065,52 +732,35 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="footer-brand-name">Electrician Pro X</div>
-                    <div style="font-size:0.75rem;color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">by Pro X Trades</div>
-                    <p>The CRM built exclusively for electrical contractors — with 20+ NEC field tools included.</p>
+                    <div class="footer-brand-name">Pro X Trades</div>
+                    <div class="footer-brand-tag">Mobile Software for the Skilled Trades</div>
+                    <p>Building purpose-built apps for skilled tradespeople — one trade at a time.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Electrician Pro X</h4>
+                    <h4>Our Apps</h4>
                     <ul>
-                        <li><a href="https://apps.apple.com/app/id6755925920" target="_blank" rel="noopener">Download iOS App</a></li>
-                        <li><a href="https://play.google.com/store/apps/details?id=com.electricianprox.app" target="_blank" rel="noopener">Download Android App</a></li>
-                        <li><a href="https://electricianprox.com" target="_blank" rel="noopener">Launch Web App</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="https://electricianprox.com" target="_blank" rel="noopener">Electrician Pro X</a></li>
+                        <li><a href="https://apps.apple.com/app/id6755925920" target="_blank" rel="noopener">iOS App</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.electricianprox.app" target="_blank" rel="noopener">Android App</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Legal</h4>
+                    <h4>Company</h4>
                     <ul>
+                        <li><a href="#about">About</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="terms.html">Terms of Service</a></li>
-                        <li><a href="https://proxtrades.com" target="_blank" rel="noopener">Pro X Trades LLC</a></li>
+                        <li><a href="mailto:support@proxtrades.com">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Pro X Trades LLC · Electrician Pro X · All rights reserved.</p>
+                <p>&copy; 2025 Pro X Trades LLC &middot; All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Cloudflare Web Analytics placeholder -->
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Hero email signup
-        function handleHeroSignup() {
-            const email = document.getElementById('hero-email').value.trim();
-            const base = 'https://app.electricianprox.com/account?mode=signup';
-            if (email) {
-                window.location.href = base + '&email=' + encodeURIComponent(email);
-            } else {
-                window.location.href = base;
-            }
-        }
-        // Allow Enter key in the email field
-        document.getElementById('hero-email').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') handleHeroSignup();
-        });
-
+    <script>
         // Scroll reveal
         const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
