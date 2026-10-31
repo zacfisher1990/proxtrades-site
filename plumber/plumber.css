@@ -1,0 +1,256 @@
+/* Shared styles for the Plumber Pro X pages under /plumber/.
+   Colors mirror the app's dark theme (constants/theme.ts in plumber-native):
+   brand blue #4DB8FE on graphite. */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --primary: #4DB8FE;
+    --primary-dark: #429EDA;
+    --on-primary: #111725;
+    --bg: #191D24;
+    --bg-nav: #1F242C;
+    --bg-card: #2B313B;
+    --bg-inset: #232830;
+    --text: #F2F4F7;
+    --text-sub: #9AA3B0;
+    --border: #39414E;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+    overflow-x: hidden;
+}
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header {
+    background: var(--bg-nav);
+    border-bottom: 1px solid var(--border);
+}
+.site-header .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+}
+.brand:hover { text-decoration: none; }
+.brand img { width: 36px; height: 36px; border-radius: 8px; }
+.brand-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.35rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+.brand-by { display: block; font-size: 0.75rem; color: var(--text-sub); margin-top: 2px; }
+.site-nav { display: flex; gap: 20px; font-size: 0.95rem; }
+.site-nav a { color: var(--text-sub); }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+
+/* ── Buttons ── */
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid transparent;
+}
+.btn:hover { text-decoration: none; }
+.btn-primary { background: var(--primary); color: var(--on-primary); }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-outline { border-color: var(--border); color: var(--text); }
+.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+
+/* ── Document pages (privacy, terms, guide, delete account) ── */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border);
+}
+.page-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+.page-header .app-name { color: var(--primary); font-weight: 600; }
+.page-header .updated { color: var(--text-sub); font-size: 0.9rem; }
+
+.content {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.content h2 {
+    font-size: 1.4rem;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 16px;
+}
+.content h2:first-child { margin-top: 0; }
+.content h3 { font-size: 1.1rem; margin-top: 24px; margin-bottom: 12px; }
+.content p { margin-bottom: 16px; color: var(--text-sub); }
+.content ul, .content ol { margin-bottom: 16px; padding-left: 24px; }
+.content li { margin-bottom: 8px; color: var(--text-sub); }
+.content strong { color: var(--text); }
+
+.note, .contact {
+    background: var(--bg-inset);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 16px 0 24px;
+}
+.note { border-left: 3px solid var(--primary); }
+.note p:last-child, .contact p:last-child { margin-bottom: 0; }
+
+.toc {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px;
+    margin-bottom: 32px;
+}
+.toc a {
+    display: block;
+    padding: 10px 14px;
+    background: var(--bg-inset);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-weight: 500;
+}
+.toc a:hover { border-color: var(--primary); color: var(--primary); text-decoration: none; }
+
+.site-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 24px 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-sub);
+    font-size: 0.9rem;
+}
+.site-footer a { color: var(--text-sub); }
+.site-footer a:hover { color: var(--primary); }
+.site-footer .links { margin-bottom: 8px; }
+.site-footer .links a { margin: 0 8px; }
+
+/* ── Landing page ── */
+.hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 72px 20px 56px;
+    text-align: center;
+}
+.hero img.app-icon { width: 88px; height: 88px; border-radius: 20px; margin-bottom: 20px; }
+.eyebrow {
+    color: var(--primary);
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+.hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 3.4rem;
+    line-height: 1.05;
+    margin-bottom: 18px;
+}
+.hero h1 em { font-style: normal; color: var(--primary); }
+.hero p.lead {
+    max-width: 640px;
+    margin: 0 auto 28px;
+    color: var(--text-sub);
+    font-size: 1.15rem;
+}
+.hero .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.hero .platforms { margin-top: 16px; color: var(--text-sub); font-size: 0.9rem; }
+
+.section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 20px;
+}
+.section h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 8px;
+}
+.section .sub { text-align: center; color: var(--text-sub); margin-bottom: 32px; }
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+.feature {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+}
+.feature h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.feature p { color: var(--text-sub); font-size: 0.95rem; }
+
+.plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.plan {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+}
+.plan.featured { border-color: var(--primary); }
+.plan h3 { font-size: 1.2rem; margin-bottom: 4px; }
+.plan .price { font-size: 1.8rem; font-weight: 700; margin: 8px 0 4px; }
+.plan .price span { font-size: 0.95rem; font-weight: 500; color: var(--text-sub); }
+.plan .alt { color: var(--text-sub); font-size: 0.9rem; margin-bottom: 16px; }
+.plan ul { list-style: none; }
+.plan li { color: var(--text-sub); padding: 4px 0 4px 22px; position: relative; }
+.plan li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+
+@media (max-width: 640px) {
+    .content { padding: 24px; }
+    .page-header h1 { font-size: 1.6rem; }
+    .hero h1 { font-size: 2.5rem; }
+    .site-nav { display: none; }
+}
