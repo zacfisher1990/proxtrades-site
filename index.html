@@ -2,12 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script>document.documentElement.classList.add('js');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pro X Trades — Mobile Software for the Skilled Trades</title>
-    <meta name="description" content="Pro X Trades LLC builds purpose-built mobile apps for skilled tradespeople. Our flagship app, Electrician Pro X, is the CRM built exclusively for electrical contractors.">
+    <meta name="description" content="Pro X Trades LLC builds dedicated business apps for the skilled trades: Electrician Pro X, Plumber Pro X and HVAC Pro X. Estimates, invoices, scheduling and field tools, free to start.">
+    <link rel="canonical" href="https://proxtrades.com/">
+    <meta name="theme-color" content="#1f2227">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Pro X Trades">
+    <meta property="og:url" content="https://proxtrades.com/">
+    <meta property="og:title" content="Pro X Trades — Software Built for the Skilled Trades">
+    <meta property="og:description" content="Dedicated business apps for electricians, plumbers and HVAC contractors. Estimates, invoices, scheduling and field tools, free to start.">
+    <meta property="og:image" content="https://proxtrades.com/images/icon.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Pro X Trades — Software Built for the Skilled Trades">
+    <meta name="twitter:description" content="Dedicated business apps for electricians, plumbers and HVAC contractors.">
+    <meta name="twitter:image" content="https://proxtrades.com/images/icon.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://proxtrades.com/#org",
+                "name": "Pro X Trades LLC",
+                "url": "https://proxtrades.com/",
+                "logo": "https://proxtrades.com/images/icon.png",
+                "email": "support@proxtrades.com"
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Electrician Pro X",
+                "url": "https://electricianprox.com",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "iOS, Android, Web",
+                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                "publisher": { "@id": "https://proxtrades.com/#org" }
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Plumber Pro X",
+                "url": "https://proxtrades.com/plumber/",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                "publisher": { "@id": "https://proxtrades.com/#org" }
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "HVAC Pro X",
+                "url": "https://proxtrades.com/hvac/",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                "publisher": { "@id": "https://proxtrades.com/#org" }
+            }
+        ]
+    }
+    </script>
 
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -24,8 +81,8 @@
             --bg-card: #282d35;
             --bg-card-hover: #2f3540;
             --text: #dde1ea;
-            --text-sub: #7a8394;
-            --text-muted: #4a5263;
+            --text-sub: #9aa3b2;
+            --text-muted: #7f8899;
             --border: #3c4350;
             --border-bright: #3c4350;
             --success: #22c55e;
@@ -110,7 +167,25 @@
             font-size: 0.875rem; font-weight: 600;
             transition: all 0.2s;
         }
+        .nav a.nav-cta { color: #000; }
         .nav-cta:hover { background: #ffd93d; color: #000 !important; transform: translateY(-1px); }
+        .nav-toggle {
+            display: none;
+            background: none; border: 1px solid var(--border); border-radius: 8px;
+            width: 44px; height: 44px; cursor: pointer; color: var(--text);
+            align-items: center; justify-content: center;
+        }
+        .nav-toggle svg { width: 22px; height: 22px; }
+        .nav-toggle .icon-close { display: none; }
+        .nav-toggle[aria-expanded="true"] .icon-open { display: none; }
+        .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
+
+        /* ── FOCUS ── */
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--yellow);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
 
         /* ── HERO ── */
         .hero {
@@ -476,12 +551,12 @@
             transition: border-color 0.2s;
         }
         .contact-email:hover { border-color: var(--yellow); }
-        .contact-email a { color: var(--yellow); font-weight: 500; }
+        .contact-email-addr { color: var(--yellow); font-weight: 500; }
 
         /* ── FOOTER ── */
         .footer { padding: 60px 0 28px; background: #161a1f; border-top: 1px solid var(--border); }
         .footer-grid {
-            display: grid; grid-template-columns: 2fr 1fr 1fr;
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 48px; margin-bottom: 48px;
         }
         .footer-brand-name {
@@ -506,6 +581,18 @@
         /* ── SCROLL REVEAL ── */
         .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
+        /* Content stays visible if JavaScript never runs */
+        html:not(.js) .reveal { opacity: 1; transform: none; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-delay: 0s !important;
+                transition-duration: 0.01ms !important;
+            }
+            .reveal { opacity: 1; transform: none; }
+        }
 
         /* ── RESPONSIVE ── */
         @media (max-width: 1024px) {
@@ -517,7 +604,18 @@
         }
 
         @media (max-width: 640px) {
-            .nav { display: none; }
+            .nav-toggle { display: inline-flex; }
+            .nav {
+                display: none;
+                position: absolute; top: 68px; left: 0; right: 0;
+                flex-direction: column; align-items: stretch; gap: 0;
+                background: var(--bg);
+                border-bottom: 1px solid var(--border);
+                padding: 8px 28px 20px;
+            }
+            .nav.open { display: flex; }
+            .nav a { padding: 14px 0; font-size: 1rem; border-bottom: 1px solid var(--border); }
+            .nav a.nav-cta { margin-top: 16px; text-align: center; border-bottom: none; padding: 12px 22px; }
             .hero { padding: 110px 0 70px; }
             .hero h1 { font-size: 2.8rem; }
             .section-title { font-size: 2.2rem; }
@@ -534,7 +632,11 @@
                 <span class="logo-name">Pro X Trades</span>
                 <span class="logo-tag">Mobile Software for the Trades</span>
             </a>
-            <nav class="nav">
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+                <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+            </button>
+            <nav class="nav" id="site-nav" aria-label="Main">
                 <a href="#apps">Our Apps</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
@@ -573,7 +675,7 @@
                 <!-- Electrician Pro X -->
                 <div class="app-card featured reveal">
                     <div class="app-badge">Flagship App</div>
-                    <div class="app-icon">⚡</div>
+                    <div class="app-icon" aria-hidden="true">⚡</div>
                     <div class="app-status live">Available Now</div>
                     <p class="app-trade">For Electrical Contractors</p>
                     <h3>Electrician Pro X</h3>
@@ -591,7 +693,7 @@
                     <div class="app-links">
                         <a href="https://electricianprox.com" class="app-link-btn primary" target="_blank" rel="noopener">
                             Visit electricianprox.com
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            <svg width="14" height="14" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                         </a>
                         <a href="https://apps.apple.com/app/id6755925920" class="app-link-btn secondary" target="_blank" rel="noopener">Download App</a>
                     </div>
@@ -599,7 +701,7 @@
 
                 <!-- Plumber Pro X -->
                 <div class="app-card reveal">
-                    <div class="app-icon">🔧</div>
+                    <div class="app-icon" aria-hidden="true">🔧</div>
                     <div class="app-status live">Available on the Web</div>
                     <p class="app-trade">For Plumbing Contractors</p>
                     <h3>Plumber Pro X</h3>
@@ -617,7 +719,7 @@
                     <div class="app-links">
                         <a href="https://app.plumber.proxtrades.com" class="app-link-btn primary" target="_blank" rel="noopener">
                             Open Web App
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            <svg width="14" height="14" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                         </a>
                         <a href="/plumber/" class="app-link-btn secondary">Learn More</a>
                     </div>
@@ -625,7 +727,7 @@
 
                 <!-- HVAC Pro X -->
                 <div class="app-card reveal">
-                    <div class="app-icon">❄️</div>
+                    <div class="app-icon" aria-hidden="true">❄️</div>
                     <div class="app-status live">Available on the Web</div>
                     <p class="app-trade">For HVAC Contractors</p>
                     <h3>HVAC Pro X</h3>
@@ -643,7 +745,7 @@
                     <div class="app-links">
                         <a href="https://app.hvac.proxtrades.com" class="app-link-btn primary" target="_blank" rel="noopener">
                             Open Web App
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            <svg width="14" height="14" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                         </a>
                         <a href="/hvac/" class="app-link-btn secondary">Learn More</a>
                     </div>
@@ -667,13 +769,13 @@
                         At Pro X Trades LLC, we take a different approach. We build a dedicated app for each trade — one that understands how that trade works, what paperwork they produce, what tools they need on the job site, and how their business actually runs.
                     </p>
                     <p>
-                        Our first app, Electrician Pro X, is the CRM built exclusively for electrical contractors. Each new app we build will bring that same level of craft to another trade.
+                        That's why we have three apps, not one: Electrician Pro X for electrical contractors, Plumber Pro X for plumbers, and HVAC Pro X for heating and cooling contractors. Each new app we build will bring that same level of craft to another trade.
                     </p>
                 </div>
                 <div class="mission-creds">
-                    <span class="mission-cred">🏢 Trade-Specific Software</span>
-                    <span class="mission-cred">📱 Mobile-First Design</span>
-                    <span class="mission-cred">⚙️ Built for the Field</span>
+                    <span class="mission-cred"><span aria-hidden="true">🏢</span> Trade-Specific Software</span>
+                    <span class="mission-cred"><span aria-hidden="true">📱</span> Mobile-First Design</span>
+                    <span class="mission-cred"><span aria-hidden="true">⚙️</span> Built for the Field</span>
                 </div>
             </div>
             <div class="mission-quote">
@@ -693,28 +795,28 @@
             <p class="section-sub reveal">The principles that guide every app we build.</p>
             <div class="values-grid reveal">
                 <div class="value-item">
-                    <div class="value-icon">🎯</div>
+                    <div class="value-icon" aria-hidden="true">🎯</div>
                     <div class="value-text">
                         <h3>Trade-Specific</h3>
                         <p>We build one app per trade, not one app for every trade. Each product is purpose-built for the workflows, documents, and field tools that trade actually uses.</p>
                     </div>
                 </div>
                 <div class="value-item">
-                    <div class="value-icon">📱</div>
+                    <div class="value-icon" aria-hidden="true">📱</div>
                     <div class="value-text">
                         <h3>Mobile-First</h3>
                         <p>Tradespeople work in the field. Every app we build is designed for a phone first — fast, reliable, and useful whether you're in the office or on the job site.</p>
                     </div>
                 </div>
                 <div class="value-item">
-                    <div class="value-icon">⚡</div>
+                    <div class="value-icon" aria-hidden="true">⚡</div>
                     <div class="value-text">
                         <h3>Office & Field in One</h3>
                         <p>Business management tools and trade-specific field tools — all in the same app. No switching between a CRM and a separate reference tool.</p>
                     </div>
                 </div>
                 <div class="value-item">
-                    <div class="value-icon">🆓</div>
+                    <div class="value-icon" aria-hidden="true">🆓</div>
                     <div class="value-text">
                         <h3>Free to Start</h3>
                         <p>Every app we build includes a free plan. Tradespeople shouldn't have to pay just to try software — get started free, upgrade when it earns it.</p>
@@ -732,8 +834,8 @@
             <div class="contact-inner reveal">
                 <p>Questions about our apps, partnership inquiries, or feedback? We'd love to hear from you.</p>
                 <a href="mailto:support@proxtrades.com" class="contact-email">
-                    <span>✉</span>
-                    <span><a href="mailto:support@proxtrades.com">support@proxtrades.com</a></span>
+                    <span aria-hidden="true">✉</span>
+                    <span class="contact-email-addr">support@proxtrades.com</span>
                 </a>
             </div>
         </div>
@@ -764,19 +866,44 @@
                     <h4>Company</h4>
                     <ul>
                         <li><a href="#about">About</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="/best-apps.html">Best Apps for Electricians</a></li>
                         <li><a href="mailto:support@proxtrades.com">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy.html">Electrician Pro X Privacy</a></li>
+                        <li><a href="/terms.html">Electrician Pro X Terms</a></li>
+                        <li><a href="/plumber/privacy.html">Plumber Pro X Privacy</a></li>
+                        <li><a href="/plumber/terms.html">Plumber Pro X Terms</a></li>
+                        <li><a href="/hvac/privacy.html">HVAC Pro X Privacy</a></li>
+                        <li><a href="/hvac/terms.html">HVAC Pro X Terms</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Pro X Trades LLC &middot; All rights reserved.</p>
+                <p>&copy; <span id="year">2026</span> Pro X Trades LLC &middot; All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu
+        const navToggle = document.querySelector('.nav-toggle');
+        const nav = document.getElementById('site-nav');
+        const setNav = (open) => {
+            nav.classList.toggle('open', open);
+            navToggle.setAttribute('aria-expanded', String(open));
+            navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        navToggle.addEventListener('click', () => setNav(!nav.classList.contains('open')));
+        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNav(false)));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setNav(false); });
+
         // Scroll reveal
         const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
