@@ -189,7 +189,7 @@
 
         /* ── HERO ── */
         .hero {
-            padding: 150px 0 100px;
+            padding: 116px 0 36px;
             position: relative; overflow: hidden;
             background: var(--bg);
             text-align: center;
@@ -225,15 +225,15 @@
             color: var(--yellow);
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            margin-bottom: 28px;
+            margin-bottom: 18px;
         }
 
         .hero h1 {
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: 5rem; font-weight: 900;
+            font-size: 3.8rem; font-weight: 900;
             line-height: 0.95;
             letter-spacing: -0.5px;
-            margin-bottom: 28px;
+            margin-bottom: 16px;
             text-transform: uppercase;
         }
         .hero h1 em {
@@ -245,7 +245,7 @@
         .hero-subtitle {
             font-size: 1.15rem;
             color: var(--text-sub);
-            margin: 0 auto 44px;
+            margin: 0 auto 28px;
             line-height: 1.7;
             max-width: 620px;
         }
@@ -274,6 +274,69 @@
             border: 1.5px solid var(--border-bright);
         }
         .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+
+        /* ── LAUNCH BANNER ── */
+        .launch {
+            max-width: 760px; margin: 0 auto;
+            background: rgba(34,197,94,0.06);
+            border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 14px;
+            padding: 18px 20px;
+        }
+        .launch-head {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.15rem; font-weight: 800;
+            letter-spacing: 0.06em; text-transform: uppercase;
+            color: var(--text); margin-bottom: 14px;
+        }
+        .live-dot {
+            width: 9px; height: 9px; border-radius: 50%;
+            background: var(--success);
+            box-shadow: 0 0 0 0 rgba(34,197,94,0.6);
+            animation: pulse 1.8s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
+            70% { box-shadow: 0 0 0 10px rgba(34,197,94,0); }
+            100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+        }
+        .launch-links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .launch-link {
+            display: flex; align-items: center; gap: 12px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 12px 16px; text-align: left;
+            transition: all 0.2s;
+        }
+        .launch-link:hover { border-color: var(--success); transform: translateY(-2px); }
+        .launch-link .ll-icon { font-size: 1.5rem; }
+        .launch-link .ll-text { flex: 1; line-height: 1.25; }
+        .launch-link .ll-name {
+            display: block;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.2rem; font-weight: 800; text-transform: uppercase;
+        }
+        .launch-link .ll-sub { font-size: 0.8rem; color: var(--success); font-weight: 600; }
+        .launch-link .ll-go {
+            background: var(--yellow); color: #000;
+            font-size: 0.8rem; font-weight: 700;
+            padding: 7px 12px; border-radius: 6px; white-space: nowrap;
+        }
+        .launch-note {
+            margin-top: 12px; font-size: 0.85rem; color: var(--text-sub);
+        }
+        .launch-note strong { color: var(--yellow); font-weight: 600; }
+
+        .app-badge.new { background: var(--success); }
+        .app-soon {
+            display: flex; align-items: center; gap: 8px;
+            background: rgba(247,198,0,0.07);
+            border: 1px dashed rgba(247,198,0,0.35);
+            border-radius: 8px; padding: 8px 12px;
+            font-size: 0.82rem; color: var(--text-sub);
+            margin-bottom: 18px;
+        }
+        .app-soon strong { color: var(--yellow); font-weight: 600; }
 
         /* ── MISSION ── */
         .mission {
@@ -374,12 +437,12 @@
         }
         .section-sub {
             text-align: center; color: var(--text-sub);
-            font-size: 1rem; margin-bottom: 64px;
+            font-size: 1rem; margin-bottom: 48px;
             max-width: 500px; margin-left: auto; margin-right: auto;
         }
 
         /* ── OUR APPS ── */
-        .apps { padding: 100px 0; background: var(--bg); }
+        .apps { padding: 36px 0 100px; background: var(--bg); }
 
         .apps-grid {
             display: grid; grid-template-columns: repeat(3, 1fr);
@@ -596,7 +659,7 @@
 
         /* ── RESPONSIVE ── */
         @media (max-width: 1024px) {
-            .hero h1 { font-size: 3.8rem; }
+            .hero h1 { font-size: 3.2rem; }
             .mission .container { grid-template-columns: 1fr; gap: 40px; }
             .apps-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
             .values-grid { grid-template-columns: 1fr; }
@@ -616,8 +679,10 @@
             .nav.open { display: flex; }
             .nav a { padding: 14px 0; font-size: 1rem; border-bottom: 1px solid var(--border); }
             .nav a.nav-cta { margin-top: 16px; text-align: center; border-bottom: none; padding: 12px 22px; }
-            .hero { padding: 110px 0 70px; }
-            .hero h1 { font-size: 2.8rem; }
+            .hero { padding: 96px 0 28px; }
+            .hero h1 { font-size: 2.4rem; }
+            .hero-subtitle { font-size: 1rem; }
+            .launch-links { grid-template-columns: 1fr; }
             .section-title { font-size: 2.2rem; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
         }
@@ -654,11 +719,23 @@
                 <em>The Skilled Trades.</em>
             </h1>
             <p class="hero-subtitle animate-up-3">
-                We build purpose-built mobile apps for skilled tradespeople — tools designed around how you actually work, not adapted from generic business software.
+                Purpose-built apps for electricians, plumbers, and HVAC techs — designed around how you actually work.
             </p>
-            <div class="hero-cta animate-up-4">
-                <a href="#apps" class="btn btn-primary">See Our Apps</a>
-                <a href="#about" class="btn btn-outline">About the Company</a>
+            <div class="launch animate-up-4">
+                <div class="launch-head"><span class="live-dot"></span>Now Live: Plumber Pro X &amp; HVAC Pro X</div>
+                <div class="launch-links">
+                    <a href="https://app.plumber.proxtrades.com" class="launch-link" target="_blank" rel="noopener">
+                        <span class="ll-icon">🔧</span>
+                        <span class="ll-text"><span class="ll-name">Plumber Pro X</span><span class="ll-sub">Live on the web</span></span>
+                        <span class="ll-go">Open App &rarr;</span>
+                    </a>
+                    <a href="https://app.hvac.proxtrades.com" class="launch-link" target="_blank" rel="noopener">
+                        <span class="ll-icon">❄️</span>
+                        <span class="ll-text"><span class="ll-name">HVAC Pro X</span><span class="ll-sub">Live on the web</span></span>
+                        <span class="ll-go">Open App &rarr;</span>
+                    </a>
+                </div>
+                <p class="launch-note">📱 Coming soon to the <strong>App Store</strong> &amp; <strong>Google Play</strong></p>
             </div>
         </div>
     </section>
@@ -667,8 +744,7 @@
     <section id="apps" class="apps">
         <div class="container">
             <p class="section-label reveal">Our Products</p>
-            <h2 class="section-title reveal">Apps Built for<br>Each Trade.</h2>
-            <p class="section-sub reveal">Every trade deserves software that speaks its language. We build dedicated apps — not one-size-fits-all tools adapted from something else.</p>
+            <h2 class="section-title reveal" style="margin-bottom:40px">Apps Built for Each Trade.</h2>
 
             <div class="apps-grid">
 
@@ -701,8 +777,9 @@
 
                 <!-- Plumber Pro X -->
                 <div class="app-card reveal">
+                    <div class="app-badge new">Now Live</div>
                     <div class="app-icon" aria-hidden="true">🔧</div>
-                    <div class="app-status live">Available on the Web</div>
+                    <div class="app-status live">Live on the Web</div>
                     <p class="app-trade">For Plumbing Contractors</p>
                     <h3>Plumber Pro X</h3>
                     <p class="app-desc">
@@ -714,8 +791,8 @@
                         <li>Online payments via Stripe</li>
                         <li>Plumbing field tools — free on every plan</li>
                         <li>Crew scheduling, dispatch & time cards</li>
-                        <li>Web app now — iOS & Android coming soon</li>
                     </ul>
+                    <div class="app-soon">📱 <span><strong>App Store &amp; Google Play</strong> — coming soon</span></div>
                     <div class="app-links">
                         <a href="https://app.plumber.proxtrades.com" class="app-link-btn primary" target="_blank" rel="noopener">
                             Open Web App
@@ -727,8 +804,9 @@
 
                 <!-- HVAC Pro X -->
                 <div class="app-card reveal">
+                    <div class="app-badge new">Now Live</div>
                     <div class="app-icon" aria-hidden="true">❄️</div>
-                    <div class="app-status live">Available on the Web</div>
+                    <div class="app-status live">Live on the Web</div>
                     <p class="app-trade">For HVAC Contractors</p>
                     <h3>HVAC Pro X</h3>
                     <p class="app-desc">
@@ -740,8 +818,8 @@
                         <li>Online payments via Stripe</li>
                         <li>HVAC field tools & tune-up reports — free on every plan</li>
                         <li>Crew scheduling, dispatch & time cards</li>
-                        <li>Web app now — iOS & Android coming soon</li>
                     </ul>
+                    <div class="app-soon">📱 <span><strong>App Store &amp; Google Play</strong> — coming soon</span></div>
                     <div class="app-links">
                         <a href="https://app.hvac.proxtrades.com" class="app-link-btn primary" target="_blank" rel="noopener">
                             Open Web App
